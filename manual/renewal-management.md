@@ -11,9 +11,9 @@ basic unit of work that you manage with the program.
 - Creating a renewal can be done interactively from the main menu. The option `N` uses the easiest defaults for 
 IIS users and the option `M` offers full options, for example for Apache, Exchange, wildcard certificates, etc. 
 - Any certificate that can be created from the main menu, can also be created from the 
-[command line](/win-acme/reference/cli). 
+[command line](/reference/cli). 
 The command line even offers some options that the menu does not, check out the documentation 
-about [plugins](/win-acme/reference/plugins/) to read all about it.
+about [plugins](/reference/plugins/) to read all about it.
 - It's also possible to add `.json` files to the folder yourself, either manually or using some clever tooling or 
 scripting, to create a lighty coupled integration between your own management tools and win-acme.
 
@@ -21,7 +21,7 @@ scripting, to create a lighty coupled integration between your own management to
 Many users mistakenly try to modify their renewal by issuing commands like `--renew --webroot C:\NewRoot` 
 hoping that the configured webroot for their renewal will be changed. The reason this doesn't work is 
 because a renew cycle checks **all** renewals, each of which can use any of the hundreds of possible 
-combinations of [plugins](/win-acme/reference/plugins/), so it's complex to figure out what the 
+combinations of [plugins](/reference/plugins/), so it's complex to figure out what the 
 true intention of such a command should be. Therefore, modification and renewal are completely separate
 functions.
 
@@ -50,7 +50,7 @@ The effects are the same as above.
 
 ## Internals
 Renewals are stored in the `ConfigPath` which typically means `%ProgramData%\win-acme\acme-v02.api.letsencrypt.org`, 
-though that can be changed in [settings.json](/win-acme/reference/settings). Each file that fits the pattern 
+though that can be changed in [settings.json](/reference/settings). Each file that fits the pattern 
 `*.renewal.json` is considered to be a renewal. 
 
 ### File names
@@ -62,6 +62,6 @@ name of file. You can specify your own identifier at creation time with the `--i
 The renewal files consist of three parts:
 - Metadata, e.g. it's identifier, friendly name and the encrypted version of the password that is used for 
 the cached `.pfx` archive.
-- Plugin configuration, e.g. everything that the [plugins](/win-acme/reference/plugins/) need to know 
+- Plugin configuration, e.g. everything that the [plugins](/reference/plugins/) need to know 
 to do their jobs, according to the command line arguments and menu choices that were given at creation time.
 - History, i.e. a record of each successful and failed attempt to get a certificate based on the file.

@@ -4,7 +4,7 @@ sidebar: reference
 
 # IIS
 Create target based on bindings configured in IIS. 
-- Automatically updates webroot path (useful for [FileSystem validation](/win-acme/reference/plugins/validation/http/filesystem))
+- Automatically updates webroot path (useful for [FileSystem validation](/reference/plugins/validation/http/filesystem))
 
 # Filtering bindings
 While it's possible to create a certificate for all bindings in all sites, typically you will want to select some 

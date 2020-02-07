@@ -6,7 +6,7 @@ sidebar: reference
 Here are all the command line arguments the program accepts.
 
 #### Notes
-- Make sure that you are familiar with the basics of [renewal management](/win-acme/manual/renewal-management) 
+- Make sure that you are familiar with the basics of [renewal management](/manual/renewal-management) 
   before proceeding with unattended use.
 - Arguments documented as such: `--foo [--bar baz|qux]` mean that `--foo` is only 
 applicable when `--bar` is set to `baz` or `qux`.

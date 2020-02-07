@@ -10,7 +10,7 @@ time-outs during validation. This used to be optional behaviour controlled by th
 ## web.config
 
 Optionally this plugin can place a `web.config` next to the validation file, to 
-help IIS properly serve the response. There are [many reasons](/win-acme/manual/validation-problems) 
+help IIS properly serve the response. There are [many reasons](/manual/validation-problems) 
 why IIS can fail to properly server the file. Some of them can be fixed this way. 
 
 In interactive mode the program will ask you if you want to do this. In unattended mode you 

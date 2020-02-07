@@ -117,7 +117,7 @@ Default: `null`
 
 The path where certificates and request files are cached. If not specified or invalid,
 this defaults to `{ConfigurationPath}\Certificates`. If you are using 
-[Central SSL](//win-acme/reference/plugins/store/centralssl), this can **not** 
+[Central SSL](//reference/plugins/store/centralssl), this can **not** 
 be set to the same path. Values should be JSON-encoded, e.g. `"C:\\"`
 (note the double backslash).
 

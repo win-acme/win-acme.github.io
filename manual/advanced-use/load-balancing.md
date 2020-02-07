@@ -10,7 +10,7 @@ It really depends if you're using a separate appliance to offload HTTPS or if it
 handled by the servers in the pool themselves. In the latter case you should probably 
 use the [Central Certificate Store](https://blogs.msdn.microsoft.com/kaushal/2012/10/11/central-certificate-store-ccs-with-iis-8-windows-server-2012/) 
 feature of IIS. Instructions on how to configure win-acme to use it can be found 
-[here](/win-acme/reference/plugins/store/centralssl).
+[here](/reference/plugins/store/centralssl).
 
 ## Scheduled task
 - You can have a single server act as a renewal server running win-acme. That means it's a single 
@@ -30,4 +30,4 @@ in the cluster can read the passwords.
 
 ## Appliance
 If you are using an appliance then you have to use their API and call into that from a `.bat`/`.ps1`/`.exe` 
-using an [installation script](/win-acme/reference/plugins/installation). 
+using an [installation script](/reference/plugins/installation). 

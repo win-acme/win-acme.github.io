@@ -16,7 +16,7 @@ mode you will be asked, for unattended mode you can provide a comma seperated li
 e.g. `--store certificatestore,pemfiles`
 
 ## Default
-The default is the [Windows Certificate Store](/win-acme/reference/plugins/store/certificatestore).
+The default is the [Windows Certificate Store](/reference/plugins/store/certificatestore).
 
 ## None
 To instruct the program not to use any store, for example when your installation 

@@ -64,7 +64,7 @@ it [here](http://ipv6-test.com/validate.php).
 ### FileSystem plugin IIS issues
 Note that it's recommended to use the default `SelfHosting` validation plugin in combination 
 with IIS. The `FileSystem` validation is great of other web servers such as 
-[Apache](/win-acme/manual/advanced-use/examples/apache), but using it in combination with IIS 
+[Apache](/manual/advanced-use/examples/apache), but using it in combination with IIS 
 leads to many potentials issues, described in the following sections.
 
 #### CMS modules

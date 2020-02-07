@@ -4,7 +4,7 @@ sidebar: manual
 
 # Migration from v1.9.9+ to v2.0.x
 Version 2.0.0 is **not** an xcopy update. Many small but potentially **breaking** changes have been made. 
-See the [release notes](https://github.com/PKISharp/win-acme/releases/tag/v2.0.0.177) for details. This 
+See the [release notes](https://github.com/win-acme/releases/tag/v2.0.0.177) for details. This 
 guide explains how to import the renewals, but you might need to take other steps depending on how you
 use the tool.
 

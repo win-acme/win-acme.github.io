@@ -7,7 +7,7 @@ This version introduced the ability to store information about renewals in a fil
 the registry. This has several advantages including easier replication, backups, etc.
 
 By default this is only enable for new clean installs, but you can migrate manually if 
-you want to. This assumes you already followed the [v1.9.5](/win-acme/manual/upgrading/to-v1.9.5) 
+you want to. This assumes you already followed the [v1.9.5](/manual/upgrading/to-v1.9.5) 
 steps, or your initial install was on that version or higher. If not, 
 replace `HKEY_LOCAL_MACHINE` with `HKEY_CURRENT_USER` and `%programdata%` with `%appdata%`.
 

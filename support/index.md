@@ -1,6 +1,6 @@
 ﻿# Community support
-If you run into trouble please open an issue [here](https://github.com/PKISharp/win-acme/issues).
-Please check to see if your issue is covered in the [manual](/win-acme/manual/) before you create a 
+If you run into trouble please open an issue [here](https://github.com/win-acme/issues).
+Please check to see if your issue is covered in the [manual](/manual/) before you create a 
 new issue. Describe the exact steps you took and try to reproduce it while running with the `--verbose` 
 command line option set. Post your command line and the output from the console or log file to help 
 us diagnose the problem.

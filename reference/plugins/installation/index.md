@@ -13,7 +13,7 @@ mode you will be asked, for unattended mode you can provide a comma seperated li
 e.g. `--installation certificatestore,pemfiles`
 
 ## Default (simple mode)
-In simple mode the default installation plugin is [IIS Web](/win-acme/reference/plugins/installation/iisweb). 
+In simple mode the default installation plugin is [IIS Web](/reference/plugins/installation/iisweb). 
 
 ## Default (full options / unattended)
 In full options and unattended modes there are **no** default installation steps,

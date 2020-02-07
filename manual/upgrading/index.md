@@ -25,7 +25,7 @@ Some versions of win-acme have required or recommended migration steps, which ar
 in this case means that you can or should read this if you're migrating from a version below 1.9.5 
 to version 1.9.5 or higher. 
 
-- [v1.9.5](/win-acme/manual/upgrading/to-v1.9.5)
-- [v1.9.9](/win-acme/manual/upgrading/to-v1.9.9)
-- [v2.0.0](/win-acme/manual/upgrading/to-v2.0.0)
-- [v2.1.0](/win-acme/manual/upgrading/to-v2.0.0)
+- [v1.9.5](/manual/upgrading/to-v1.9.5)
+- [v1.9.9](/manual/upgrading/to-v1.9.9)
+- [v2.0.0](/manual/upgrading/to-v2.0.0)
+- [v2.1.0](/manual/upgrading/to-v2.0.0)
