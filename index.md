@@ -27,6 +27,7 @@ but powerful enough to grow into almost every scenario.
 ![screenshot](/assets/screenshot.png)
 
 # Sponsors
+- <img src="https://user-images.githubusercontent.com/11052380/74772623-a7128b00-5290-11ea-958d-10420c770b30.png" alt="Insurance Technology Services" width="150px" /> [eGov Strategies](https://www.egovstrategies.com/)
 - <img src="https://user-images.githubusercontent.com/11052380/72933908-fb465000-3d62-11ea-9b97-57b8a29fd783.png" alt="Insurance Technology Services" width="50px" /> [Insurance Technology Services](https://insurancetechnologyservices.com/)
 - [e-shop LTD](https://www.e-shop.co.il/)
 - The Proof Group @proofgroup
