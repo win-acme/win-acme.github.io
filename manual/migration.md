@@ -13,7 +13,7 @@ configured there are available on/from the new machine.
 to access all the resources it might need for validation (e.g. FTP services, 
 Azure Managed Resource Identity, etc.).
 
-# Pre-seed certificates
+## Pre-seed certificates
 If you're using HTTP validation directly from the old machine (which is most common 
 scenario), you will have to update your DNS records before you can issue certificates 
 on the new machine (don't forget the IPv6 when doing so!)
