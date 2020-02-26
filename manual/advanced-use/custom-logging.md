@@ -3,7 +3,7 @@ sidebar: manual
 ---
 
 # Custom logging
-The program users [Serilog](https://serilog.net/) for logging which is a powerful extensible library.
+The program uses [Serilog](https://serilog.net/) for logging which is a powerful extensible library.
 
 ## Levels
 win-acme uses the following five log levels:

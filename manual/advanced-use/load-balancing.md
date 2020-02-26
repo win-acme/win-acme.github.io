@@ -25,7 +25,7 @@ feature of IIS. Instructions on how to configure win-acme to use it can be found
 - If you're building an actual cluster, you can use a Clustered Task instead of a regular Scheduled Task.
 
 ## Encryption
-The encryption for the config files will have to be disabled via `settings.json` so that all machines 
+The [encryption](/manual/advanced-use/encryption) for the config files will have to be disabled via `settings.json` so that all machines 
 in the cluster can read the passwords.
 
 ## Appliance

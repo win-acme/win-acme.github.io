@@ -21,6 +21,9 @@ manual:
 - title: Renewal management
   url: /manual/renewal-management
 
+- title: Validation problems
+  url: /manual/validation-problems
+
 - title: Advanced usage
   url: /manual/advanced-use/
   subs: 
@@ -38,9 +41,11 @@ manual:
       url: /manual/advanced-use/load-balancing
     - title: Custom logging
       url: /manual/advanced-use/custom-logging 
+    - title: Encryption
+      url: /manual/advanced-use/encryption
 
-- title: Validation problems
-  url: /manual/validation-problems
+- title: Migration
+  url: /manual/migration
 
 - title: Upgrading
   url: /manual/upgrading/

@@ -6,13 +6,12 @@ sidebar: manual
 The simple mode works well for the most common use case, but there are many 
 reasons to go for full options mode. For example:
 - You don't use IIS
-- You need to use [DNS validation](/reference/plugins/validation/dns/) because
+- You need to use [DNS validation](/reference/plugins/validation/dns) because
 	- You are requesting a wildcard certificate
 	- Port 80 is blocked on your network
 - You are not running the program from your web server
 - You are load balancing
 - You need to run a script after each renewal, e.g. for [Exchange](/manual/advanced-use/examples/exchange)
-- etc.
 
 ## Interactive
 This describes the basic steps of an full options rewenal from the interactive menu. It touches 
