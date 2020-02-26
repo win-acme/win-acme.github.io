@@ -11,7 +11,7 @@ want to [migrate](/manual/migration) to another machine.
 ## Encryping or decrypting the files
 Save the desired encryption setting in [settings.json](/reference/settings).
 
-- In the main menu pick `More options` > Encrypt/decrypt configuration`
+- In the main menu pick `More options...` > `Encrypt/decrypt configuration`
 
 Or 
 
