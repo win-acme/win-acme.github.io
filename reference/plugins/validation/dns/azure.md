@@ -26,7 +26,7 @@ You then need to give this Service Principal access to change DNS entries. In th
 * Click `Save`
 
 #### Use a Managed Service Identity
-More information [here](https://docs.microsoft.com/en-us/azure/active-directory/managed-identities-azure-resources/overview)
+More information [here](https://docs.microsoft.com/en-us/azure/active-directory/managed-identities-azure-resources/overview). Note that configuration can be different depending on your operating system version, e.g. [#1413](https://github.com/win-acme/win-acme/issues/1413).
 
 ### Configuring the plugin
 During setup of the validation the program will ask several questions. 
