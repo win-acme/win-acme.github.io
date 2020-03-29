@@ -190,7 +190,17 @@ Password for the SMTP server, in case of authenticated SMTP.
 ### `SmtpSecure`
 Default: `false`
 
-Change to `true` to enable SMTPS.
+Change to `true` to enable secure SMTP.
+
+### `SmtpSecureMode`
+Default: `1`
+
+| Value          |  Meaning |
+|----------------|----------------|
+| 1			     | Automatic (based on port number)
+| 2			     | Implicit TLS
+| 3			     | Explicit TLS (required)
+| 4			     | Explicit TLS (when available)
 
 ### `SmtpSenderName`
 Default: `null`
@@ -278,6 +288,19 @@ waiting for the name servers to start providing the expected answer.
 Default: `30`
 
 Amount of time in seconds to wait between each retry.
+
+### `AllowDnsSubstition`
+Default: `true`
+
+If your goal is to get a certificate for `example.com` using DNS validation, 
+but the DNS provider for that domain does not support automation and/or your 
+security policy doesn't allow third party tools like win-acme to access the 
+DNS configuration, then you can set up a CNAME from `_acme-challenge.example.com` 
+to another (sub)domain under your control that doesn't have these limitations. 
+[acme-dns](/reference/plugins/validation/dns/acme-dns) is based on this principle, 
+but the same trick can be applied to any of the 
+[DNS plugins](/reference/plugins/validation/dns/). Set this value to `false` 
+to disable the feature.
 
 ### `DnsServers`
 Default: `[ "8.8.8.8", "1.1.1.1", "8.8.4.4" ]`
