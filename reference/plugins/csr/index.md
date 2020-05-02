@@ -11,4 +11,4 @@ and the third party application is expected to take care of the private key and 
 
 ## Default
 
-The default is an [RSA](/reference/plugins/csr/rsa) private key.
+The default is an [RSA](/reference/plugins/csr/rsa) private key. This can be changed in [settings.json](/reference/settings). 

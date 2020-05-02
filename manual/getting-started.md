@@ -16,10 +16,11 @@ We recommend using `%programfiles%\win-acme`.
 - Follow the instructions on the screen to configure your first renewal.
 
 ## Creating your first certificate
-**Note:** simple mode is for users looking to install a non-wildcard certificate on their local IIS instance. 
-For any other scenario you should skip straight to the section on [advanced use](/manual/advanced-use/).
+**Note:** the default settings are for users looking to install a regular (non-wildcard) certificate 
+on their local IIS instance. For any other scenario you should skip straight to the section 
+on [advanced use](/manual/advanced-use/).
 
-- Choose `N` in the main menu to create a new certificate in simple mode.
+- Choose `N` in the main menu to create a new certificate with default settings.
 - Choose how you want to determine the domain name(s) that you want to include in the certificate. 
 This can be derived from the bindings of an IIS site, or you can input them manually.
 - A registration is created with the ACME server, if no existing one can be found. You will be asked 

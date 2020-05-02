@@ -231,6 +231,11 @@ as opposed to the default behavior that only send failure notifications.
 Only works if at least `SmtpServer`, `SmtpSenderAddress`and `SmtpReceiverAddress` 
 have been configured.
 
+### `ComputerName`
+Default: `null`
+
+This value replaces the Windows machine name reported in emails.
+
 ## Security
 
 ### `RSAKeyBits`
@@ -264,7 +269,27 @@ Default: `600`
 Time in seconds to allow installation and DNS scripts to run before
 terminating them forcefully.
 
+## Target
+
+### `DefaultTarget`
+Default: `null`
+
+Default target plugin. This only affects the menu in the UI. `null` 
+equivalent to `"iis"` with `"manual"` as backup for non-administrators 
+or systems without IIS.
+
 ## Validation
+
+### `DefaultValidation`
+Default: `null`
+
+Default validation plugin, `null` currently equivalent to `"selfhosting"` 
+with `"filesystem"` as backup for non-administrators.
+
+### `DefaultValidationMode`
+Default: `null`
+
+Default validation method, `null` currently equivalent to `"http-01"`.
 
 ### `CleanupFolders`
 Default: `true`
@@ -313,7 +338,27 @@ program query your servers default, but note that this can lead to
 prevalidation failures when your Active Directory is hosting a private 
 version of the DNS zone for internal use. 
 
+## Order 
+
+### `DefaultOrder`
+Default: `null`
+
+Default order plugin, `null` currently equivalent to `"single"`
+
+## Csr 
+
+### `DefaultCsr`
+Default: `null`
+
+Default order plugin, `null` currently equivalent to `"rsa"`
+
 ## Store
+
+### `DefaultStore`
+Default: `null`
+
+Default store plugin(s), `null` currently equivalent to `"certificatestore"`. 
+This may be a comma seperated value for multiple default store plugins.
 
 ### `DefaultCertificateStore`
 Default: `null`
@@ -350,3 +395,12 @@ unnecessary in most cases. Renewals created with the default path will automatic
 change to any future default value, meaning this is also a good practice for
 maintainability. Values should be JSON-encoded, e.g. `"C:\\"`
 (note the double backslash).
+
+## Installation
+
+### `DefaultInstallation`
+Default: `null`
+
+Default installation plugin(s), `null` currently equivalent to `"none"` for 
+unattended usage and `"iis"` for interactive mode. This may be a comma 
+seperated value for multiple default installation plugins.

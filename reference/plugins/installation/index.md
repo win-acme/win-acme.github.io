@@ -12,10 +12,11 @@ More than one plugin can run by choosing them in order of execution. In interact
 mode you will be asked, for unattended mode you can provide a comma seperated list, 
 e.g. `--installation certificatestore,pemfiles`
 
-## Default (simple mode)
-In simple mode the default installation plugin is [IIS Web](/reference/plugins/installation/iisweb). 
+## Default (default settings)
+In default settings mode the default installation plugin is [IIS Web](/reference/plugins/installation/iisweb). 
+This can be changed in [settings.json](/reference/settings).  
 
 ## Default (full options / unattended)
 In full options and unattended modes there are **no** default installation steps,
-which is equivalent to `--installation none`. You can to explicitly choose them 
-from the interface or using the `--installation` switch. 
+which is equivalent to `--installation none`. This can be changed in [settings.json](/reference/settings).  
+You can to explicitly choose them from the interface or using the `--installation` switch. 

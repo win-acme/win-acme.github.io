@@ -17,7 +17,8 @@ e.g. `--store certificatestore,pemfiles`
 
 ## Default
 The default is the [Windows Certificate Store](/reference/plugins/store/certificatestore).
+This can be changed in [settings.json](/reference/settings).
 
 ## None
 To instruct the program not to use any store, for example when your installation 
-script handles it, you may specify `--store none`
+script handles it, you may specify `--store none`. 

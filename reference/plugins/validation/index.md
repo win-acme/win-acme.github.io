@@ -21,3 +21,4 @@ Several other challenge types are not supported for various reasons:
 ## Default
 
 By default, the [self-hosting plugin](/reference/plugins/validation/http/selfhosting) is used.
+This can be changed in [settings.json](/reference/settings).
