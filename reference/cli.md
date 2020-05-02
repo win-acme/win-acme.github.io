@@ -95,8 +95,11 @@ applicable when `--bar` is set to `baz` or `qux`.
      Specify which validation mode to use. HTTP-01 is the
      default.
 
+   --order
+     Specify which order plugin to use. Single is the default.
+
    --csr
-     Specify which csr plugin to use. RSA is the default.
+     Specify which CSR plugin to use. RSA is the default.
 
    --store
      Specify which store plugin to use. CertificateStore is the
@@ -293,6 +296,11 @@ applicable when `--bar` is set to `baz` or `qux`.
      443. This option is only useful in combination with a port
      forwarding.
 
+   --validationprotocol
+     Protocol to use to handle validation requests. Defaults to http 
+     but may be set to https if you have automatic redirects setup in 
+     your infrastructure before requests hit the web server.
+
 ```
 ## FileSystem plugin
 ``` [--validation filesystem] ```
@@ -401,21 +409,31 @@ applicable when `--bar` is set to `baz` or `qux`.
 ## Dreamhost
 ``` [--validationmode dns-01 --validation dreamhost] ```
 ```
-   --apiKey
+   --apikey
      Dreamhost API key.
+
+```
+## LuaDNS
+``` [--validationmode dns-01 --validation luadns] ```
+```
+   --luadnsusername
+     LuaDNS account username (email address)
+
+   --luadnsapikey
+     LuaDNS API key
 
 ```
 ## Route53
 ``` [--validationmode dns-01 --validation route53] ```
 ```
-   --route53IAMRole
+   --route53iamrole
      AWS IAM role for the current EC2 instance to login into
      Amazon Route 53.
 
-   --route53AccessKeyId
+   --route53accesskeyid
      Access key ID to login into Amazon Route 53.
 
-   --route53SecretAccessKey
+   --route53secretaccesskey
      Secret access key to login into Amazon Route 53.
 
 ```

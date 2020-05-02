@@ -3,7 +3,7 @@ sidebar: manual
 ---
 
 # Advanced use
-The simple mode works well for the most common use case, but there are many 
+The default settings works well for the most common use case, but there are many 
 reasons to go for full options mode. For example:
 - You don't use IIS
 - You need to use [DNS validation](/reference/plugins/validation/dns) because
@@ -31,8 +31,8 @@ pressing `<Enter>` in response to a question.
   the certificate. For Apache, nginx and others web servers the `PemFiles` plugin is commonly 
   chosen.
 - One or more [installation plugins](/reference/plugins/installation/) can be selected 
-  to run after the certificate has been requested. The standard IIS option from simple mode 
-  is of course available, but also the powerful [script installer](/reference/plugins/installation/script).
+  to run after the certificate has been requested. The standard IIS option is of course available, 
+  but also the powerful [script installer](/reference/plugins/installation/script).
 - A registration with the ACME server is created, if it doesn't already exist. You will be 
   asked to agree to the terms of service and to provide an email address that the server 
   administrators can use to contact you.

@@ -106,12 +106,14 @@ reference:
               url: /reference/plugins/validation/dns/manual
             - title: Script
               url: /reference/plugins/validation/dns/script
-            - title: Microsoft Azure DNS
+            - title: Microsoft Azure
               url: /reference/plugins/validation/dns/azure
-            - title: Amazon AWS Route53
+            - title: Amazon Route53
               url: /reference/plugins/validation/dns/route53
             - title: Cloudflare
               url: /reference/plugins/validation/dns/cloudflare
+            - title: LuaDNS
+              url: /reference/plugins/validation/dns/lua
             - title: Dreamhost
               url: /reference/plugins/validation/dns/dreamhost
 
@@ -120,6 +122,14 @@ reference:
           subs:
             - title: Self-hosting
               url: /reference/plugins/validation/tls-alpn/selfhosting
+
+    - title: Order
+      url: /reference/plugins/order/
+      subs:
+        - title: Single
+          url: /reference/plugins/order/single
+        - title: Host
+          url: /reference/plugins/order/host
 
     - title: CSR
       url: /reference/plugins/csr/
