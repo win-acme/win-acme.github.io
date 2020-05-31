@@ -130,6 +130,10 @@ reference:
           url: /reference/plugins/order/single
         - title: Host
           url: /reference/plugins/order/host
+        - title: Site
+          url: /reference/plugins/order/site
+        - title: Domain
+          url: /reference/plugins/order/domain
 
     - title: CSR
       url: /reference/plugins/csr/
@@ -148,6 +152,8 @@ reference:
           url: /reference/plugins/store/centralssl
         - title: .pem files (Apache etc.)
           url: /reference/plugins/store/pemfiles
+        - title: .pfx file
+          url: /reference/plugins/store/pfxfile
 
     - title: Installation
       url: /reference/plugins/installation/

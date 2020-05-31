@@ -49,38 +49,40 @@ applicable when `--bar` is set to `baz` or `qux`.
      change certificate properties and renew at the same time.
 
    --force
-     Force renewal on all scheduled certificates when used
-     together with --renew. Otherwise just bypasses the
-     certificate cache on new certificate requests.
+     Force renewal when used together with --renew. Otherwise
+     bypasses the certificate cache on new certificate
+     requests.
 
    --cancel
-     Cancel renewal specified by the --friendlyname or --id 
+     Cancel renewal specified by the --friendlyname or --id
      arguments.
 
    --revoke
-     Revoke the most recently issued certificate for the renewal 
-     specified by the --friendlyname or --id arguments.
+     Revoke the most recently issued certificate for the
+     renewal specified by the --friendlyname or --id arguments.
 
    --list
      List all created renewals in unattended mode.
 
    --id
-     [--target|--cancel|--renew|--revoke] Id of a new or existing
-     renewal, can be used to override the default when creating
-     a new renewal or to specify a specific renewal for other
-     commands.
-
-   --friendlyname
-     [--target|--cancel|--renew|--revoke] Friendly name of a new or
+     [--target|--cancel|--renew|--revoke] Id of a new or
      existing renewal, can be used to override the default when
      creating a new renewal or to specify a specific renewal
-     for other commands. In the latter case a pattern might be used. 
-     You may use a `*` for a range of any characters and a `?` 
-     for any single character. For example: the pattern `example.*` 
-     will match `example.net` and `example.com` (but not `my.example.com`) 
-     and the pattern `?.example.com` will match `a.example.com` and 
-     `b.example.com` (but not `www.example.com`). Note that multiple patterns 
-     can be combined by comma seperating them.
+     for other commands.
+
+   --friendlyname
+     [--target|--cancel|--renew|--revoke] Friendly name of a
+     new or existing renewal, can be used to override the
+     default when creating a new renewal or to specify a
+     specific renewal for other commands. In the latter case a
+     pattern might be used. You may use a `*` for a range of
+     any characters and a `?` for any single character. For
+     example: the pattern `example.*` will match `example.net`
+     and `example.com` (but not `my.example.com`) and the
+     pattern `?.example.com` will match `a.example.com` and
+     `b.example.com` (but not `www.example.com`). Note that
+     multiple patterns can be combined by comma seperating
+     them.
 
    --target
      Specify which target plugin to run, bypassing the main
@@ -222,6 +224,16 @@ applicable when `--bar` is set to `baz` or `qux`.
      .pem files are exported to this folder
 
 ```
+## PFX file plugin
+``` [--store pfxfile] ```
+```
+   --pfxfilepath
+     Path to write the .pfx file to.
+
+   --pfxpassword
+     Password to set for .pfx files exported to the IIS CSS.
+
+```
 # Target
 
 ## CSR plugin
@@ -296,11 +308,6 @@ applicable when `--bar` is set to `baz` or `qux`.
      443. This option is only useful in combination with a port
      forwarding.
 
-   --validationprotocol
-     Protocol to use to handle validation requests. Defaults to http 
-     but may be set to https if you have automatic redirects setup in 
-     your infrastructure before requests hit the web server.
-
 ```
 ## FileSystem plugin
 ``` [--validation filesystem] ```
@@ -332,6 +339,12 @@ applicable when `--bar` is set to `baz` or `qux`.
      that the ACME server will always send requests to port 80.
      This option is only useful in combination with a port
      forwarding.
+
+   --validationprotocol
+     Protocol to use to handle validation requests. Defaults to
+     http but may be set to https if you have automatic
+     redirects setup in your infrastructure before requests hit
+     the web server.
 
 ```
 ## AcmeDns
