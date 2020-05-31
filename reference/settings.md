@@ -11,12 +11,11 @@ settings.
 
 ## Client
 
-### `ClientNames`
-Default: `[ "win-acme" ]`
+### `ClientName`
+Default: `"win-acme"`
 
 The name of the client, which comes back in the scheduled task and the 
-`ConfigurationPath`. If more than one value is provided the first one will
-be used.
+`ConfigurationPath`.
 
 ### `ConfigurationPath`
 Default: `null`
@@ -36,7 +35,7 @@ specified or invalid, this defaults to `{ConfigurationPath}\Log`.
 ### `DateFormat` 
 Default: `"yyyy/M/d H:mm:ss"`
 
-A string that is used to format the date of the pfx file friendly 
+A string that is used to format the date of the certificates friendly 
 name. [Documentation](https://msdn.microsoft.com/en-us/library/8kb3ddd4(v=vs.110).aspx) 
 for possibilities is available from Microsoft.
 
@@ -117,7 +116,7 @@ Default: `null`
 
 The path where certificates and request files are cached. If not specified or invalid,
 this defaults to `{ConfigurationPath}\Certificates`. If you are using 
-[Central SSL](//reference/plugins/store/centralssl), this can **not** 
+[CentralSsl](//reference/plugins/store/centralssl), this can **not** 
 be set to the same path. Values should be JSON-encoded, e.g. `"C:\\"`
 (note the double backslash).
 
@@ -206,7 +205,7 @@ Default: `1`
 Default: `null`
 
 Display name to use as the sender of notification emails.
-Defaults to the `ClientNames[0]` setting when empty.
+Defaults to the `ClientName` setting when empty.
 
 ### `SenderAddress`
 Default: `null`
@@ -226,10 +225,10 @@ for multiple addresses.
 ### `EmailOnSuccess`
 Default: `false`
 
-Send an email notification when a certificate has been successfully renewed,
-as opposed to the default behavior that only send failure notifications. 
-Only works if at least `SmtpServer`, `SmtpSenderAddress`and `SmtpReceiverAddress` 
-have been configured.
+Send an email notification when a certificate has been successfully created 
+or renewed, as opposed to the default behavior that only send failure 
+notifications. Only works if at least `SmtpServer`, `SmtpSenderAddress`
+and `SmtpReceiverAddress` have been configured.
 
 ### `ComputerName`
 Default: `null`
