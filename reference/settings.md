@@ -360,14 +360,14 @@ Default: `null`
 Default store plugin(s), `null` currently equivalent to `"certificatestore"`. 
 This may be a comma seperated value for multiple default store plugins.
 
-### `DefaultCertificateStore`
+### `CertificateStore.DefaultStore`
 Default: `null`
 
 The certificate store to save the certificates in. If left empty, certificates will
 be installed either in the `WebHosting` store, or if that is not available, 
 the `My` store (better known as `Personal`).
 
-### `DefaultCentralSslStore`
+### `CentralSsl.DefaultPath`
 Default: `null`
 
 When using `--store centralssl` this path is used by default, saving you the 
@@ -377,7 +377,7 @@ automatically change to any future default value, meaning this is also a good
 practice for maintainability. Values should be JSON-encoded, e.g. `"C:\\"`
 (note the double backslash).
 
-### `DefaultCentralSslPfxPassword`
+### `CentralSsl.DefaultPassword`
 Default: `null`
 
 When using `--store centralssl` this password is used by default for the pfx 
@@ -386,7 +386,7 @@ the `--pfxpassword` parameter unnecessary in most cases. Renewals created with
 the default password will automatically change to any future default value, 
 meaning this is also a good practice for maintainability.
 
-### `DefaultPemFilesPath`
+### `Pemfiles.DefaultPath`
 Default: `null`
 
 When using `--store pemfiles` this path is used by default, saving you the effort 
@@ -395,6 +395,25 @@ unnecessary in most cases. Renewals created with the default path will automatic
 change to any future default value, meaning this is also a good practice for
 maintainability. Values should be JSON-encoded, e.g. `"C:\\"`
 (note the double backslash).
+
+### `PfxFile.DefaultPath`
+Default: `null`
+
+When using `--store pfxfile` this path is used by default, saving you the 
+effort from providing it manually. Filling this out makes the `--pfxfilepath`
+parameter unnecessary in most cases. Renewals created with the default path will 
+automatically change to any future default value, meaning this is also a good 
+practice for maintainability. Values should be JSON-encoded, e.g. `"C:\\"`
+(note the double backslash).
+
+### `PfxFile.DefaultPassword`
+Default: `null`
+
+When using `--store pfxfile` this password is used by default for the pfx 
+files, saving you the effort from providing it manually. Filling this out makes
+the `--pfxpassword` parameter unnecessary in most cases. Renewals created with
+the default password will automatically change to any future default value, 
+meaning this is also a good practice for maintainability.
 
 ## Installation
 
