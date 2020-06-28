@@ -12,9 +12,11 @@ following replacements are made by win-acme:
 
 | Value          |  Replaced with |
 |----------------|----------------|
-| `{Identifier}` | host name that's being validated, e.g. `sub.example.com`                                    |
-| `{RecordName}` | full name of the TXT record that is being expected, e.g. `_acme-challenge.sub.example.com`  |
-| `{Token}`      | content of the TXT record, e.g. `DGyRejmCefe7v4NfDGDKfA`                                    |
+| `{Identifier}` | host name that's being validated, e.g. `sub.example.com`										|
+| `{RecordName}` | full name of the TXT record that is being expected, e.g. `_acme-challenge.sub.example.com`	|
+| `{ZoneName}`   | registerable domain, e.g. `example.com`														|
+| `{NodeName}`   | registerable domain, e.g. `_acme-challenge.sub`												|
+| `{Token}`      | content of the TXT record, e.g. `DGyRejmCefe7v4NfDGDKfA`										|                                 |
 
 The order and format of arguments may be customized by providing a diffent argument string. 
 For example if your script needs arguments like:
@@ -32,9 +34,10 @@ customized by providing a diffent argument string, just like for the create scri
 the same script for create and delete, with each their own argument string.
 
 ## Resources
-A lot of good example scripts are available from the 
+A lot of good reference scripts are available from the 
 [POSH-ACME](https://github.com/rmbolger/Posh-ACME/tree/master/Posh-ACME/DnsPlugins)
-project.
+project. Note that these scripts are **not compatible** with win-acme. You will have
+to make changes (e.g. in terms of accepted parameter and such) in order to use them.
 
 ## Unattended
 - ##### Create script only

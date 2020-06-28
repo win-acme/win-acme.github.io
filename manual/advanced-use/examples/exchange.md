@@ -19,22 +19,16 @@ Assumptions made in this example:
 - We want to enable the certificate for SMTP and IMAP
 
 ## Interactive
-- Create certificate with full options
-- Manually input host names
-- [http-01] Self-host verification files
-- Create or update https bindings in IIS
-- Would you like to add another installer step? (y/n): Y
-- Run a custom script
-- Would you like to add another installer step? (y/n): N
-- Choose site to create new bindings: Default Web Site (or where ever OWA is at)
-- Enter the path to the script that you want to run after renewal: `./Scripts/ImportExchange.ps1`
-- Enter the parameter format string for the script: `'{CertThumbprint}' 'IIS,SMTP,IMAP' 1 '{CacheFile}' '{CachePassword}' '{CertFriendlyName}'`
+It's not recommended to configure a certificate for Exchange in interactive mode, 
+because some settings like `--acl-fullcontrol` (essential for installation of some updates)
+and `--certificatestore My` are not accessible from the menu. The latter can be configured
+in settings.json but the former not.
 
 ## Unattended
-- Without Central Certificate Store 
+- Windows Certificate Store (default)
   `wacs.exe --target manual --host mail.example.com,webmail.example.com,autodiscover.example.com --certificatestore My --acl-fullcontrol "network service,administrators" --installation iis,script --installationsiteid 1 --script "./Scripts/ImportExchange.ps1" --scriptparameters "'{CertThumbprint}' 'IIS,SMTP,IMAP' 1 '{CacheFile}' '{CachePassword}' '{CertFriendlyName}'"`
 
-- With Central Certificate Store
+- Central Certificate Store (load balancing etc.)
 `wacs.exe --target manual --host mail.example.com,webmail.example.com,autodiscover.example.com --store centralssl --centralsslstore "C:\Central SSL" --installation iis,script --installationsiteid 1 --script "./Scripts/ImportExchange.ps1" --scriptparameters "'{CertThumbprint}' 'IIS,SMTP,IMAP' 1 '{CacheFile}' '{CachePassword}' '{CertFriendlyName}'"`
 
 ## Verification
