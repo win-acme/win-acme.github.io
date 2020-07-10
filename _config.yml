@@ -2,5 +2,5 @@ theme: jekyll-theme-merlot
 show_downloads: true
 google_analytics: UA-134924634-2
 releasename: 2.1.9
-releasetag: 2.1.9.xxx
-releasebuild: 2.1.9.xxx
+releasetag: 2.1.9
+releasebuild: 2.1.9.865
