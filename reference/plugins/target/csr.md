@@ -10,8 +10,11 @@ customization and key selection requirements should already be met.
 
 Note that it's possible though not required to provide the private key to 
 the program as well. If you do not provide the private key, the certificate
-as stored by the [store plugins](/reference/plugins/store/) will
-have limited use.
+as stored by the [store plugins](/reference/plugins/store/) won't be usable
+for server authentication. In that case you need to use an 
+[installation script](/reference/plugins/installation/script) or 
+[manual steps](https://www.digicert.com/kb/csr-creation-ssl-installation-iis-10.htm)
+to finish the creation of a fully usable certificate.
 
 ## Unattended 
 `--target csr --csrfile C:\csr.txt [--pkfile C:\key.txt]`
