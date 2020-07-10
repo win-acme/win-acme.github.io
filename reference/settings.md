@@ -290,6 +290,12 @@ Default: `null`
 
 Default validation method, `null` currently equivalent to `"http-01"`.
 
+### `DisableMultiThreading`
+Default: `true`
+
+Disable multithreading features for validation. Inceases runtime but may
+help to fix bugs caused by race conditions.
+
 ### `CleanupFolders`
 Default: `true`
 
