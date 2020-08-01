@@ -127,16 +127,29 @@ applicable when `--bar` is set to `baz` or `qux`.
      (Obsolete) Avoid the question about specifying the task
      scheduler user, as such defaulting to the SYSTEM account.
 
+   --encrypt
+     Rewrites all renewal information using current
+     EncryptConfig setting
+
+```
+## Account
+```
    --accepttos
      Accept the ACME terms of service.
 
    --emailaddress
      Email address to use by ACME for renewal fail notices.
 
-   --encrypt
-     Rewrites all renewal information using current
-     EncryptConfig setting
+   --eab-key-identifier
+     Key identifier to use for external account binding.
 
+   --eab-key
+     Key to use for external account binding. Must be base64url 
+     encoded.
+
+   --eab-algorithm
+     Algorithm to use for external account binding. Valid 
+     values are HS256 (default), HS384, and HS512.
 ```
 # CSR
 
@@ -411,6 +424,11 @@ applicable when `--bar` is set to `baz` or `qux`.
    --azureresourcegroupname
      The name of the resource group within Microsoft Azure DNS.
 
+    --azureenvironment
+    This can be used to specify a specific Azure endpoint. 
+    Valid inputs are AzureCloud (default), AzureChinaCloud, 
+    AzureGermanCloud, AzureUSGovernment or a specific URI for an 
+    Azure Stack implementation.
 ```
 ## Cloudflare
 ``` [--validationmode dns-01 --validation cloudflare] ```

@@ -8,5 +8,11 @@ Exports a `.pem` file for the certificate and private key and places them in
 the path provided by the `--pemfilespath` parameter, or the `Store.PemFiles.DefaultPath` 
 setting in [settings.json](/reference/settings). 
 
+Files created are:
+- `{CommonName}-crt.pem` (certificate)
+- `{CommonName}-key.pem` (private key)
+- `{CommonName}-chain.pem` (certificate plus chain)
+- `{CommonName}-chain-only.pem` (chain without certificate)
+
 ## Unattended
 `--store pemfiles [--pemfilespath C:\Certificates\]`

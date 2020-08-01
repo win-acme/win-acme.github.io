@@ -24,5 +24,11 @@ port to `System`. If you feel that is too generous, you could automate enabling/
 disabling this rule by running a script before and after `wacs.exe`. Make sure to
 also add that script as steps in the scheduled task.
 
+## Errors
+If the handler is unable to start you may first try to test which process is using
+the port using Powershell `Get-Process -Id (Get-NetTCPConnection -LocalPort 80).OwningProcess`.
+It's also possible that some software has blocked access, which can be diagnosed using 
+the command `netsh http show urlacl`.
+
 ## Unattended 
 `[--validation selfhosting] [--validationport 8080]`
