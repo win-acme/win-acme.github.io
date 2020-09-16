@@ -21,7 +21,7 @@ You can change the log level by adding the following setting:
 ## Included sinks
 - The default sink logs to the console window to provide real time insights.
 - The `event` sink writes to the Windows Event Viewer includes `Error`, `Warning` and selected `Information` messages.
-- The `disk` sink writes rolling log files to `%programdata%\win-acme\log` 
+- The `disk` sink writes rolling log files to `%programdata%\win-acme\$baseuri$\Log` 
   (that path can be changed in [settings.json](/reference/settings))
 
 ## Custom sinks
