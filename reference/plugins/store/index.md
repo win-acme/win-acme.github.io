@@ -5,7 +5,7 @@ sidebar: reference
 # Store plugins
 Store plugins are responsible for storing issued certificates in their permanent 
 location(s). The program will cache the certificate in a `.pfx` file in its 
-CertificatePath (which defaults to `%programdata%\win-acme\[baseuri]certificates`) but 
+CertificatePath (which defaults to `%programdata%\win-acme\$baseuri$\certificates`) but 
 these files are protected by random passwords to prevent local non-administrators 
 from obtaining keys. Store plugins are responsible for making the certificates 
 accessible to the application(s) that need them.
