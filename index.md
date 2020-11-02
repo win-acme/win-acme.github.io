@@ -2,14 +2,14 @@
 This is a ACMEv2 client for Windows that aims to be very simple to start with, 
 but powerful enough to grow into almost every scenario.
 
-- A very simple text interface to create and install certificates on a local IIS server
-- A more advanced text interface for many other use cases, including [Apache](/manual/advanced-use/examples/apache) and [Exchange](/manual/advanced-use/examples/exchange)
+- A very simple interface to create and install certificates on a local IIS server
+- A more advanced interface for many other use cases, including [Apache](/manual/advanced-use/examples/apache) and [Exchange](/manual/advanced-use/examples/exchange)
 - Automatically creates a scheduled task to renew certificates when needed
 - Get certificates with 
-	wildcards (`*.example.com`), 
-	international names (`证书.example.com`), 
-	[OCSP Must Staple](/reference/plugins/csr/rsa) extension, optional 
-	[re-use](/reference/plugins/csr/rsa) of private keys,
+	Wildcards (`*.example.com`), 
+	International names (`证书.example.com`), 
+	[OCSP Must Staple](/reference/plugins/csr/rsa) extension 
+	[re-use](/reference/plugins/csr/rsa) of private keys for DANE,
 	[EC](/reference/plugins/csr/ec) crypto or use your own 
 	[CSR](/reference/plugins/target/csr)
 - Advanced toolkit for DNS, HTTP and TLS validation:
@@ -18,11 +18,17 @@ but powerful enough to grow into almost every scenario.
 	[Azure](/reference/plugins/validation/dns/azure), 
 	[Route53](/reference/plugins/validation/dns/route53), 
 	[Cloudflare](/reference/plugins/validation/dns/cloudflare) 
-	and more...
+	and [many more](/reference/plugins/validation)...
+- Compatible with all ACME service providers
+	[Let's Encrypt](https://letsencrypt.org/)
+	[ZeroSSL](https://zerossl.com/)
+	[DigiCert](https://www.digicert.com/)
+	[Sectigo](https://sectigo.com/)
+	and others...
 - Completely unattended operation from the command line
 - Other forms of automation through manipulation of `.json` files
-- Write your own Powershell `.ps1` scripts to handle custom installation and validation
-- Build your own plugins with C# and make the program do exactly what you want
+- Write your own Powershell `.ps1` scripts to handle installation and validation
+- Build your own plugins with C#
 
 ![screenshot](/assets/screenshot.png)
 
@@ -35,5 +41,10 @@ but powerful enough to grow into almost every scenario.
 
 # Getting started
 Download the `.zip` file from the download menu, unpack it to a location on your hard disk
-and run `wacs.exe`. If you require assistance please check the [manual](/manual/getting-started)
+and run `wacs.exe`. 
+
+Alternatively install [.NET Core](https://dotnet.microsoft.com/download), run `dotnet tool install win-acme --global` and then `wacs.exe`.
+
+# Getting help
+If you require assistance please check the [manual](/manual/getting-started)
 first before looking for [support](/support/).
