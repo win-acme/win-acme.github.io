@@ -6,11 +6,11 @@ but powerful enough to grow into almost every scenario.
 - A more advanced interface for many other use cases, including [Apache](/manual/advanced-use/examples/apache) and [Exchange](/manual/advanced-use/examples/exchange)
 - Automatically creates a scheduled task to renew certificates when needed
 - Get certificates with 
-	Wildcards (`*.example.com`), 
-	International names (`证书.example.com`), 
-	[OCSP Must Staple](/reference/plugins/csr/rsa) extension 
-	[re-use](/reference/plugins/csr/rsa) of private keys for DANE,
-	[EC](/reference/plugins/csr/ec) crypto or use your own 
+	wildcards (`*.example.com`), 
+	international names (`证书.example.com`), 
+	[OCSP Must Staple](/reference/plugins/csr/rsa) extension (optional).
+- [Re-use](/reference/plugins/csr/rsa) private keys for DANE, use 
+	[EC](/reference/plugins/csr/ec) crypto or bring your own 
 	[CSR](/reference/plugins/target/csr)
 - Advanced toolkit for DNS, HTTP and TLS validation:
 	[SFTP](/reference/plugins/validation/http/sftp)/[FTPS](/reference/plugins/validation/http/ftps), 
@@ -19,11 +19,11 @@ but powerful enough to grow into almost every scenario.
 	[Route53](/reference/plugins/validation/dns/route53), 
 	[Cloudflare](/reference/plugins/validation/dns/cloudflare) 
 	and [many more](/reference/plugins/validation)...
-- Compatible with all ACME service providers
-	[Let's Encrypt](https://letsencrypt.org/)
-	[ZeroSSL](https://zerossl.com/)
-	[DigiCert](https://www.digicert.com/)
-	[Sectigo](https://sectigo.com/)
+- Compatible with all popular ACME service providers, including 
+	[Let's Encrypt](https://letsencrypt.org/), 
+	[ZeroSSL](https://zerossl.com/),
+	[DigiCert](https://www.digicert.com/), 
+	[Sectigo](https://sectigo.com/),
 	and others...
 - Completely unattended operation from the command line
 - Other forms of automation through manipulation of `.json` files
