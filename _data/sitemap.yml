@@ -116,6 +116,8 @@ reference:
               url: /reference/plugins/validation/dns/lua
             - title: Dreamhost
               url: /reference/plugins/validation/dns/dreamhost
+            - title: DigitalOcean
+              url: /reference/plugins/validation/dns/digitalocean
 
         - title: TLS validation
           url: /reference/plugins/validation/tls-alpn/
