@@ -31,4 +31,4 @@ Create or update website bindings in IIS, according to the following logic:
 	Renewals will still be automatic after this initial manual setup.
 
 ## Unattended 
-`--installation iis [--installationsiteid x] [-sslport x] [--sslipaddress x]`
+`--installation iis [--installationsiteid x] [--sslport x] [--sslipaddress x]`
