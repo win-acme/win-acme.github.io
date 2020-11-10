@@ -34,29 +34,19 @@ on the new machine
 
 That means that in theory you won't be able to get certificates before you go "live" 
 on the new machine, which is a problem for services that require continuous 
-availability. To work around this we can:
+availability. To work around this you can:
 
-- Move the "old" certificates to the new machine, which is easy to accomplish using
-the [PemFiles](/reference/plugins/store/pemfiles) or 
-[CentralSsl](/reference/plugins/store/centralssl) store plugins because they allow
-you to easily copy over the files. If you're using the default [CertificateStore](/reference/plugins/store/certificatestore)
-the process is a bit more difficult though. Roughly there are two options:
-    - Look at the (decrypted) `.renewal.json` files to reveal the passwords
-for the `.pfx` files in the `CertificateCache` folder 
-(typically `%ProgramData%\win-acme\acme-v02.api.letsencrypt.org\Certificates`, 
-though that can be customized in [settings.json](/reference/settings)) and 
-import those on the new machine. If your renewals are still encrypted, you can 
-access these passwords from the main menu (`Manage Renewals` > `Show details`).
-In theory this could be scripted, please contribute!
-    - Set the `PrivateKeyExportable` setting to true in 
-[settings.json](/reference/settings), force renew the certificates to make this 
-setting take effect and export and import them manually using `certlm.msc`, or 
-use a Powershell script to do so (if you wrote one you'd like to share, please 
-contribute!)
-- The second technique is to force renew all certificates on the old machine, 
+- Force renew all certificates on the old machine, 
 so that your account will have valid authorizations cached for all domains. Then
 on the new machine you will be able to (also) renew and order new certificates 
 based on the cached validation results.
+- Move the "old" certificates to the new machine, which is easy to accomplish using
+the [PemFiles](/reference/plugins/store/pemfiles), 
+[PfxFile](/reference/plugins/store/pfxfile) or 
+[CentralSsl](/reference/plugins/store/centralssl) store plugins because they allow
+you to easily copy over the files. If you're using the default [CertificateStore](/reference/plugins/store/certificatestore)
+the process is a bit more difficult though, because you will need to get access to 
+the [private keys](/manual/advanced-use/private-key-management).
 
 ## Post-migration checklist
 - Review the renewal manager to see if all expected renewals are present

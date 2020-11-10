@@ -43,6 +43,8 @@ manual:
       url: /manual/advanced-use/custom-logging 
     - title: Encryption
       url: /manual/advanced-use/encryption
+    - title: Private keys
+      url: /manual/advanced-use/private-key-management
 
 - title: Migration
   url: /manual/migration
