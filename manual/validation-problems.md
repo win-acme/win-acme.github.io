@@ -25,7 +25,8 @@ observer is the [Unbound DNS checker](https://unboundtest.com/).
 ACME providers will check for the existence and validity of a 
 [CAA record](https://support.dnsimple.com/articles/caa-record/) for your domain. You may have to add
 a record like `example.com. CAA 0 issue "letsencrypt.org" to your DNS server in order to allow the
-provider to issue certificates for your domain.
+provider to issue certificates for your domain. This can be checked using 
+[Let's Debug](https://letsdebug.net/).
 
 ### Protocols and cipher suites
 Tools like [IISCrypto](https://www.nartac.com/Products/IISCrypto) are often used configure the 
@@ -33,8 +34,9 @@ Tools like [IISCrypto](https://www.nartac.com/Products/IISCrypto) are often used
 according to the latest best practices. Changing these settings always brings some risk of 
 breaking compatibility between two parties though. Too restrictive cipher suites have been known 
 to hamper the ability to communicate with the ACME API endpoint and its validation servers. If 
-that happens try more conservative settings. Test if the [API endpoint](https://acme-v02.api.letsencrypt.org)
-is accessible from a web browser on your server.
+that happens try more conservative settings. Test if the 
+[API endpoint](https://acme-v02.api.letsencrypt.org) is accessible from a web browser on 
+your server.
 
 ## Let's Encrypt limitations
 The following limitations apply to Let's Encrypt and may not be true for every ACME 
@@ -67,12 +69,12 @@ with IIS. The `FileSystem` validation is great of other web servers such as
 [Apache](/manual/advanced-use/examples/apache), but using it in combination with IIS 
 leads to many potentials issues, described in the following sections.
 
-#### CMS modules
+##### CMS modules
 Your CMS might intercept the request and redirect the user to an (error) page. The solution 
 is to configure your CMS to allow unlimited access to the `/.well-known/acme-challenge/` 
 path.
 
-#### Problems with httpHanders
+##### Problems with httpHanders
 IIS might not be configured to serve static extensionless files. 
 
 1. In IIS manager go to the `/.well-known/acme-challenge/` folder of the site (you may have to 
@@ -83,23 +85,23 @@ break your application(s).
 
 ![Move StaticFile mapping](http://i.stack.imgur.com/nkvrL.png)
 
-#### Anonymous authentication
+##### Anonymous authentication
 Your website might require Windows authentication, client certificates or other 
 authentication methods. Enable anonymous authentication to the `/.well-known/acme-challenge/` 
 path to allow access from the ACME server.
 
-#### Require SSL
+##### Require SSL
 Your website might be configured to exclusively accept SSL traffic, while the validation 
 request comes in on port 80. Disable the "Require SSL" setting for the 
 `/.well-known/acme-challenge/` path to fix that.
 
-#### IP Address and Domain Restrictions
+##### IP Address and Domain Restrictions
 Your website might use IP Address and Domain Restrictions to provide extra security. 
 The ACME server will have to bypass though. Let's Encrypt does not publicize a list of 
 IP addresses that they can use for validation, so this features needs to be disabled 
 for the `/.well-known/acme-challenge/` path.
 
-#### URL Rewrite 
+##### URL Rewrite 
 If you are using [URL Rewrite](https://www.iis.net/downloads/microsoft/url-rewrite) the 
 validation request might get caught up in that, so you have to make exceptions for 
 the `/.well-known/acme-challenge/` path. For example like so:
@@ -116,5 +118,5 @@ the `/.well-known/acme-challenge/` path. For example like so:
 ### Name server synchronisation
 Let's Encrypt may query all of your name servers, so they will have to be 
 in sync before submitting the challenge. The program will perform a pre-validation
-'dry run' for a maximum of 5 times with 30 second intervals to allow the DNS
-changes to be processed.
+'dry run' for a maximum of 5 times with 30 second intervals (configurable in 
+`settings.json`) to allow the DNS changes to be processed.
