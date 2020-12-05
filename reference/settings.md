@@ -90,6 +90,16 @@ Default: `5`
 
 Amount of time in seconds to wait for each retry.
 
+### `PreferredIssuer`
+Default: `null`
+
+In some exceptional cases an ACME service will offer multiple certificates
+signed by different root authorities. This setting can be used to give a 
+preference. I.e. `"ISRG Root X1"` can be used to prefer Let's Encrypt first 
+fully self-signed root before it becomes the default on January 11th, 2021, 
+and `"DST Root CA X3"` can be set for backwards compatibility with old 
+Android releases (until September 30th, 2021).
+
 ## Proxy
 
 ### `Url`

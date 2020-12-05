@@ -3,9 +3,11 @@
 This plugin is offered as a separate download, which can be downloaded from the 
 [releases](https://github.com/win-acme/win-acme/releases/) page on GitHub has to 
 be unpacked into the folder where you also unpacked `wacs.exe` to able to use them. 
+If you are using win-acme as a dotnet tool, you will have to unpack to 
+`%userprofile%\.dotnet\tools\.store\win-acme\{version}\win-acme\{version}\tools\net5.0\any`
 
-Note that after unpacking you will have to unblock all new .dll files for .NET to 
-trust them. You can do that from the Windows File Explorer by using the right 
+Note that after unpacking you may have to unblock all new .dll files before .NET 
+will trust them. You can do that from the Windows File Explorer by using the right 
 mouse button and then checking the `Unblock` box on the General tab.
 
 ![image](/assets/unblock-dll.png)

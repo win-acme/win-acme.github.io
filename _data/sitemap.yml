@@ -104,23 +104,24 @@ reference:
           subs:
             - title: acme-dns
               url: /reference/plugins/validation/dns/acme-dns
-            - title: Manual
-              url: /reference/plugins/validation/dns/manual
-            - title: Script
-              url: /reference/plugins/validation/dns/script
-            - title: Microsoft Azure
+            - title: Azure (Microsoft)
               url: /reference/plugins/validation/dns/azure
-            - title: Amazon Route53
-              url: /reference/plugins/validation/dns/route53
             - title: Cloudflare
               url: /reference/plugins/validation/dns/cloudflare
-            - title: LuaDNS
-              url: /reference/plugins/validation/dns/lua
-            - title: Dreamhost
-              url: /reference/plugins/validation/dns/dreamhost
             - title: DigitalOcean
               url: /reference/plugins/validation/dns/digitalocean
-
+            - title: Dreamhost
+              url: /reference/plugins/validation/dns/dreamhost
+            - title: LuaDNS
+              url: /reference/plugins/validation/dns/lua
+            - title: Manual
+              url: /reference/plugins/validation/dns/manual
+            - title: Route53 (Amazon)
+              url: /reference/plugins/validation/dns/route53
+            - title: Script
+              url: /reference/plugins/validation/dns/script
+            - title: TransIP
+              url: /reference/plugins/validation/dns/transip
         - title: TLS validation
           url: /reference/plugins/validation/tls-alpn/
           subs:
