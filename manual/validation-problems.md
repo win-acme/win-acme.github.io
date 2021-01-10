@@ -108,7 +108,7 @@ the `/.well-known/acme-challenge/` path. For example like so:
 
 ```XML
 <rule name="LetsEncrypt Rule" stopProcessing="true">
-    <match url="^\.well-known\acme-challenge\.*$" />
+    <match url="^\.well-known/acme-challenge/.*$" />
     <action type="None" />
 </rule>
 ```
