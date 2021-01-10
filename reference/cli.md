@@ -105,11 +105,11 @@ applicable when `--bar` is set to `baz` or `qux`.
 
    --store
      Specify which store plugin to use. CertificateStore is the
-     default. This may be a comma separated list.
+     default. This may be a comma-separated list.
 
    --installation
      Specify which installation plugins to use. IIS is the
-     default. This may be a comma separated list.
+     default. This may be a comma-separated list.
 
    --closeonfinish
      [--test] Close the application when complete, which
@@ -131,6 +131,10 @@ applicable when `--bar` is set to `baz` or `qux`.
      Rewrites all renewal information using current
      EncryptConfig setting
 
+   --setuptaskscheduler
+     Create or update the scheduled task according to the
+     current settings.
+
 ```
 ## Account
 ```
@@ -144,11 +148,11 @@ applicable when `--bar` is set to `baz` or `qux`.
      Key identifier to use for external account binding.
 
    --eab-key
-     Key to use for external account binding. Must be base64url 
+     Key to use for external account binding. Must be base64url
      encoded.
 
    --eab-algorithm
-     Algorithm to use for external account binding. Valid 
+     Algorithm to use for external account binding. Valid
      values are HS256 (default), HS384, and HS512.
 ```
 # CSR
@@ -266,11 +270,11 @@ applicable when `--bar` is set to `baz` or `qux`.
 ```
    --siteid
      Identifiers of one or more sites to include. This may be a
-     comma seperated list.
+     comma-separated list.
 
    --host
      Host name to filter. This parameter may be used to target
-     specific bindings. This may be a comma seperated list.
+     specific bindings. This may be a comma-separated list.
 
    --host-pattern
      Pattern filter for host names. Can be used to dynamically
@@ -295,7 +299,7 @@ applicable when `--bar` is set to `baz` or `qux`.
 
    --excludebindings
      Exclude host names from the certificate. This may be a
-     comma separated list.
+     comma-separated list.
 
 ```
 ## Manual plugin
@@ -306,8 +310,8 @@ applicable when `--bar` is set to `baz` or `qux`.
      provided the first host name will be used.
 
    --host
-     A host name to get a certificate for. This may be a comma
-     separated list.
+     A host name to get a certificate for. This may be a
+     comma-separated list.
 
 ```
 # Validation
@@ -406,6 +410,12 @@ applicable when `--bar` is set to `baz` or `qux`.
 ## Azure
 ``` [--validationmode dns-01 --validation azure] ```
 ```
+   --azureenvironment
+     This can be used to specify a specific Azure endpoint.
+     Valid inputs are AzureCloud (default), AzureChinaCloud,
+     AzureGermanCloud, AzureUSGovernment or a specific URI for
+     an Azure Stack implementation.
+
    --azureusemsi
      Use Managed Service Identity for authentication.
 
@@ -424,17 +434,19 @@ applicable when `--bar` is set to `baz` or `qux`.
    --azureresourcegroupname
      The name of the resource group within Microsoft Azure DNS.
 
-    --azureenvironment
-    This can be used to specify a specific Azure endpoint. 
-    Valid inputs are AzureCloud (default), AzureChinaCloud, 
-    AzureGermanCloud, AzureUSGovernment or a specific URI for an 
-    Azure Stack implementation.
 ```
 ## Cloudflare
 ``` [--validationmode dns-01 --validation cloudflare] ```
 ```
    --cloudflareapitoken
      API Token for Cloudflare.
+
+```
+## DigitalOcean
+``` [--validationmode dns-01 --validation digitalocean] ```
+```
+   --digitaloceanapitoken
+     The API token to authenticate against the DigitalOcean API
 
 ```
 ## Dreamhost
@@ -444,7 +456,7 @@ applicable when `--bar` is set to `baz` or `qux`.
      Dreamhost API key.
 
 ```
-## LuaDNS
+## LuaDns
 ``` [--validationmode dns-01 --validation luadns] ```
 ```
    --luadnsusername
@@ -466,5 +478,15 @@ applicable when `--bar` is set to `baz` or `qux`.
 
    --route53secretaccesskey
      Secret access key to login into Amazon Route 53.
+
+```
+## TransIp
+``` [--validationmode dns-01 --validation transip] ```
+```
+   --transip-login
+     Login name at TransIp.
+
+   --transip-privatekey
+     Private key generated in the control panel.
 
 ```
