@@ -1,7 +1,7 @@
 {
 	"latest": {
-		"name": {{ "site.releasename" }},
-		"tag": {{ "site.releasetag" }},
-		"build": {{ "site.releasebuild" }}
+		"name": "{{ site.releasename }}",
+		"tag": "{{ site.releasetag }}",
+		"build": "{{ site.releasebuild }}"
 	}
 }
