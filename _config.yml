@@ -4,7 +4,6 @@ google_analytics: UA-134924634-2
 releasename: 2.1.14.1
 releasetag: 2.1.14.1
 releasebuild: 2.1.14.996
-markdown_ext: "md,json"
 exclude:
  - "bin"
  - "obj"

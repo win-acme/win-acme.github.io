@@ -1,11 +1,11 @@
 ---
-layout: 
+layout: none
 ---
 {
 	"latest": {
 		"name": "{{ site.releasename }}",
 		"tag": "{{ site.releasetag }}",
 		"build": "{{ site.releasebuild }}",
-		"done": "yes"
+		"done": "maybe?"
 	}
 }

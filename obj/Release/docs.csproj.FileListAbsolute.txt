@@ -1,4 +1,0 @@
-I:\Git\Repos\win-acme\docs\bin\Release\docs.exe
-I:\Git\Repos\win-acme\docs\bin\Release\docs.pdb
-I:\Git\Repos\win-acme\docs\obj\Release\docs.exe
-I:\Git\Repos\win-acme\docs\obj\Release\docs.pdb
