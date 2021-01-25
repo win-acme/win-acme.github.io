@@ -24,6 +24,8 @@ but powerful enough to grow into almost every scenario.
 	[ZeroSSL](https://zerossl.com/),
 	[DigiCert](https://www.digicert.com/), 
 	[Sectigo](https://sectigo.com/),
+	[Buypass](https://www.buypass.com/),
+	[Keyon](https://www.keyon.ch/),
 	and others...
 - Completely unattended operation from the command line
 - Other forms of automation through manipulation of `.json` files
