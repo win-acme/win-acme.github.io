@@ -14,5 +14,7 @@ Files created are:
 - `{CommonName}-chain.pem` (certificate plus chain)
 - `{CommonName}-chain-only.pem` (chain without certificate)
 
+You can optionally have the `-key.pem` file password protected.
+
 ## Unattended
-`--store pemfiles [--pemfilespath C:\Certificates\]`
+`--store pemfiles [--pemfilespath C:\Certificates\] [--pempassword ******]`

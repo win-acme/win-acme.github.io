@@ -15,6 +15,7 @@ This requires you to activate the API in the "my account" section of the control
 a key pair for win-acme.
 
 ## Unattended 
-Unattended use of this plugin is currently not supported because it uses a certificate provided in PEM 
-(multi-line) format for authentication which is not easily translate to a single command line. If it 
-turns out there is demand for this feature we might come up with a solution for that problem.
+- Key inline
+`--validation transip --validationmode dns-01 --transip-login xx --transip-privatekey `"---- PRIVATE KEY --- ...`"`
+- Key in file:
+`--validation transip --validationmode dns-01 --transip-login xx --transip-privatekey C:\transip.key`
