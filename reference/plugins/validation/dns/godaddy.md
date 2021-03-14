@@ -3,7 +3,7 @@ sidebar: reference
 ---
 
 # Dreamhost
-Update record at [Dreamhost](https://www.dreamhost.com/)
+Update record at [GoDaddy](https://www.godaddy.com/)
 
 {% include plugin-seperate.md %}
 
@@ -11,4 +11,4 @@ Update record at [Dreamhost](https://www.dreamhost.com/)
 Requires an API key
 
 ## Unattended 
-`--validation dreamhost --validationmode dns-01 --apikey x`
+`--validation godaddy --validationmode dns-01 --apikey x`

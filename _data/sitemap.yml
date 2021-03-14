@@ -112,6 +112,8 @@ reference:
               url: /reference/plugins/validation/dns/digitalocean
             - title: Dreamhost
               url: /reference/plugins/validation/dns/dreamhost
+            - title: GoDaddy
+              url: /reference/plugins/validation/dns/godaddy
             - title: LuaDNS
               url: /reference/plugins/validation/dns/lua
             - title: Manual
@@ -151,9 +153,11 @@ reference:
     - title: Store
       url: /reference/plugins/store/
       subs:
+        - title: Azure KeyVault
+          url: /reference/plugins/store/keyvault
         - title: Certificate Store
           url: /reference/plugins/store/certificatestore
-        - title: Central Certificate Store (.pfx files)
+        - title: Central Certificate Store
           url: /reference/plugins/store/centralssl
         - title: .pem files (Apache etc.)
           url: /reference/plugins/store/pemfiles

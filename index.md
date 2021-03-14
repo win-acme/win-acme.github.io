@@ -19,13 +19,19 @@ but powerful enough to grow into almost every scenario.
 	[Route53](/reference/plugins/validation/dns/route53), 
 	[Cloudflare](/reference/plugins/validation/dns/cloudflare) 
 	and [many more](/reference/plugins/validation)...
-- Compatible with all popular ACME service providers, including 
+- Store your certificates where and how you want them:
+	[Windows](/reference/plugins/store/certificatestore), 
+	[IIS Central Store](/reference/plugins/store/centralssl), 
+	[.pem files](/reference/plugins/store/pemfiles), 
+	[.pfx file](/reference/plugins/store/pfxfiles) or
+	[KeyVault](/reference/plugins/store/keyvault) 
+- Compatible with all popular ACME services, including 
 	[Let's Encrypt](https://letsencrypt.org/), 
 	[ZeroSSL](https://zerossl.com/),
 	[DigiCert](https://www.digicert.com/), 
 	[Sectigo](https://sectigo.com/),
 	[Buypass](https://www.buypass.com/),
-	[Keyon](https://www.keyon.ch/),
+	[Keyon](https://www.keyon.ch/)
 	and others...
 - Completely unattended operation from the command line
 - Other forms of automation through manipulation of `.json` files

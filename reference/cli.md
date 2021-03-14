@@ -154,6 +154,7 @@ applicable when `--bar` is set to `baz` or `qux`.
    --eab-algorithm
      Algorithm to use for external account binding. Valid
      values are HS256 (default), HS384, and HS512.
+
 ```
 # CSR
 
@@ -240,6 +241,9 @@ applicable when `--bar` is set to `baz` or `qux`.
    --pemfilespath
      .pem files are exported to this folder
 
+   --pempassword
+     Password to set for the private key .pem file.
+
 ```
 ## PFX file plugin
 ``` [--store pfxfile] ```
@@ -248,7 +252,35 @@ applicable when `--bar` is set to `baz` or `qux`.
      Path to write the .pfx file to.
 
    --pfxpassword
-     Password to set for .pfx files exported to the IIS CSS.
+     Password to set for .pfx files exported to the folder.
+
+```
+## Azure KeyVault
+``` [--store keyvault] ```
+```
+   --azureenvironment
+     This can be used to specify a specific Azure endpoint.
+     Valid inputs are AzureCloud (default), AzureChinaCloud,
+     AzureGermanCloud, AzureUSGovernment or a specific URI for
+     an Azure Stack implementation.
+
+   --azureusemsi
+     Use Managed Service Identity for authentication.
+
+   --azuretenantid
+     Tenant ID to login into Microsoft Azure.
+
+   --azureclientid
+     Client ID to login into Microsoft Azure.
+
+   --azuresecret
+     Secret to login into Microsoft Azure.
+
+   --vaultname
+     The name of the vault
+
+   --certificatename
+     The name of the certificate
 
 ```
 # Target
@@ -432,7 +464,8 @@ applicable when `--bar` is set to `baz` or `qux`.
      Subscription ID to login into Microsoft Azure DNS.
 
    --azureresourcegroupname
-     The name of the resource group within Microsoft Azure DNS.
+     [Obsolete] The name of the resource group within Microsoft
+     Azure DNS.
 
 ```
 ## Cloudflare
@@ -452,8 +485,15 @@ applicable when `--bar` is set to `baz` or `qux`.
 ## Dreamhost
 ``` [--validationmode dns-01 --validation dreamhost] ```
 ```
-   --apikey
+   --apiKey
      Dreamhost API key.
+
+```
+## Godaddy
+``` [--validationmode dns-01 --validation godday] ```
+```
+   --apikey
+     GoDaddy API key.
 
 ```
 ## LuaDns
@@ -487,6 +527,11 @@ applicable when `--bar` is set to `baz` or `qux`.
      Login name at TransIp.
 
    --transip-privatekey
-     Private key generated in the control panel.
+     Private key generated in the control panel (replace enters
+     by spaces and use quotes).
+
+   --transip-privatekeyfile
+     Private key generated in the control panel (saved to a
+     file on disk).
 
 ```
