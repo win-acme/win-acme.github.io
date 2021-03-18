@@ -464,8 +464,7 @@ applicable when `--bar` is set to `baz` or `qux`.
      Subscription ID to login into Microsoft Azure DNS.
 
    --azureresourcegroupname
-     [Obsolete] The name of the resource group within Microsoft
-     Azure DNS.
+     The name of the resource group within Microsoft Azure DNS.
 
 ```
 ## Cloudflare
