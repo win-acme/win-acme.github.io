@@ -406,7 +406,7 @@ the `--pfxpassword` parameter unnecessary in most cases. Renewals created with
 the default password will automatically change to any future default value, 
 meaning this is also a good practice for maintainability.
 
-### `Pemfiles.DefaultPath`
+### `PemFiles.DefaultPath`
 Default: `null`
 
 When using `--store pemfiles` this path is used by default, saving you the effort 
@@ -416,7 +416,7 @@ change to any future default value, meaning this is also a good practice for
 maintainability. Values should be JSON-encoded, e.g. `"C:\\"`
 (note the double backslash).
 
-### `Pemfiles.DefaultPassword`
+### `PemFiles.DefaultPassword`
 Default: `null`
 
 When using `--store pemfiles` this password is used by default for the pfx 
@@ -452,3 +452,14 @@ Default: `null`
 Default installation plugin(s), `null` currently equivalent to `"none"` for 
 unattended usage and `"iis"` for interactive mode. This may be a comma 
 seperated value for multiple default installation plugins.
+
+# Secrets
+
+## Json
+
+### FilePath
+
+Default: `null`
+
+Location of the file store secrets. If undefined, defaults to 
+`{ConfigurationPath}\secrets.json`

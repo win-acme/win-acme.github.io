@@ -45,6 +45,8 @@ manual:
       url: /manual/advanced-use/encryption
     - title: Private keys
       url: /manual/advanced-use/private-key-management
+    - title: Secrets
+      url: /manual/advanced-use/secret-management
 
 - title: Migration
   url: /manual/migration
@@ -106,6 +108,8 @@ reference:
               url: /reference/plugins/validation/dns/acme-dns
             - title: Azure (Microsoft)
               url: /reference/plugins/validation/dns/azure
+            - title: Cloud DNS (Google)
+              url: /reference/plugins/validation/dns/clouddns
             - title: Cloudflare
               url: /reference/plugins/validation/dns/cloudflare
             - title: DigitalOcean
