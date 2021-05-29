@@ -399,14 +399,14 @@ applicable when `--bar` is set to `baz` or `qux`.
 
 ```
 ## AcmeDns
-``` [--validationmode dns-01 --validation acme-dns] ```
+``` [--validation acme-dns] ```
 ```
    --acmednsserver
      Root URI of the acme-dns service
 
 ```
 ## Script
-``` [--validationmode dns-01 --validation script] ```
+``` [--validation script] ```
 ```
    --dnsscript
      Path to script that creates and deletes validation
@@ -442,7 +442,7 @@ applicable when `--bar` is set to `baz` or `qux`.
 
 ```
 ## Azure
-``` [--validationmode dns-01 --validation azure] ```
+``` [--validation azure] ```
 ```
    --azuresubscriptionid
      Subscription ID to login into Microsoft Azure DNS.
@@ -476,14 +476,14 @@ applicable when `--bar` is set to `baz` or `qux`.
 
 ```
 ## Cloudflare
-``` [--validationmode dns-01 --validation cloudflare] ```
+``` [--validation cloudflare] ```
 ```
    --cloudflareapitoken
      API Token for Cloudflare.
 
 ```
 ## DigitalOcean
-``` [--validationmode dns-01 --validation digitalocean] ```
+``` [-validation digitalocean] ```
 ```
    --digitaloceanapitoken
      The API token to authenticate against the DigitalOcean
@@ -491,14 +491,14 @@ applicable when `--bar` is set to `baz` or `qux`.
 
 ```
 ## Dreamhost
-``` [--validationmode dns-01 --validation dreamhost] ```
+``` [--validation dreamhost] ```
 ```
    --apikey
      Dreamhost API key.
 
 ```
 ## GoDaddy
-``` [--validationmode dns-01 --validation godaddy] ```
+``` [--validation godaddy] ```
 ```
    --apikey
      GoDaddy API key.
@@ -508,7 +508,7 @@ applicable when `--bar` is set to `baz` or `qux`.
 
 ```
 ## Google Cloud DNS
-``` [--validationmode dns-01 --validation gcpdns] ```
+``` [--validation gcpdns] ```
 ```
    --serviceaccountkey
      Service Account Key to authenticate with GCP
@@ -518,7 +518,7 @@ applicable when `--bar` is set to `baz` or `qux`.
 
 ```
 ## LuaDns
-``` [--validationmode dns-01 --validation luadns] ```
+``` [--validation luadns] ```
 ```
    --luadnsusername
      LuaDNS account username (email address).
@@ -528,7 +528,7 @@ applicable when `--bar` is set to `baz` or `qux`.
 
 ```
 ## Route53
-``` [--validationmode dns-01 --validation route53] ```
+``` [--validation route53] ```
 ```
    --route53iamrole
      AWS IAM role for the current EC2 instance to login into
@@ -542,7 +542,7 @@ applicable when `--bar` is set to `baz` or `qux`.
 
 ```
 ## TransIp
-``` [--validationmode dns-01 --validation transip] ```
+``` [--validation transip] ```
 ```
    --transip-login
      Login name at TransIp.

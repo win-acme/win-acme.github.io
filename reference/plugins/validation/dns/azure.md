@@ -47,6 +47,6 @@ Only when authenticating Service Principal Account:
 
 ## Unattended 
 #### Service Principal Account
-`--validationmode dns-01 --validation azure --azuretenantid x --azureclientid x --azuresecret *** --azuresubscriptionid x --azureresourcegroupname x`
+`--validation azure --azuretenantid x --azureclientid x --azuresecret *** --azuresubscriptionid x --azureresourcegroupname x`
 #### Managaged Resource Identity
-`--validationmode dns-01 --validation azure --azureusemsi --azuresubscriptionid x --azureresourcegroupname x`
+`--validation azure --azureusemsi --azuresubscriptionid x --azureresourcegroupname x`

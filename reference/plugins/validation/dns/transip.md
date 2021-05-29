@@ -16,6 +16,6 @@ a key pair for win-acme.
 
 ## Unattended 
 - Key inline
-`--validation transip --validationmode dns-01 --transip-login xx --transip-privatekey `"---- PRIVATE KEY --- ...`"`
+`--validation transip --transip-login xx --transip-privatekey `"---- PRIVATE KEY --- ...`"`
 - Key in file:
-`--validation transip --validationmode dns-01 --transip-login xx --transip-privatekey C:\transip.key`
+`--validation transip --transip-login xx --transip-privatekey C:\transip.key`

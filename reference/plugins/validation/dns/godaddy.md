@@ -11,4 +11,4 @@ Update record at [GoDaddy](https://www.godaddy.com/)
 Requires an API key
 
 ## Unattended 
-`--validation godaddy --validationmode dns-01 --apikey x`
+`--validation godaddy --apikey ***`
