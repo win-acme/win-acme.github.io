@@ -11,7 +11,7 @@ but powerful enough to grow into almost every scenario.
 	[OCSP Must Staple](/reference/plugins/csr/rsa) extension (optional).
 - [Re-use](/reference/plugins/csr/rsa) private keys for DANE, use 
 	[EC](/reference/plugins/csr/ec) crypto or bring your own 
-	[CSR](/reference/plugins/target/csr)
+	[CSR](/reference/plugins/source/csr)
 - Advanced toolkit for DNS, HTTP and TLS validation:
 	[SFTP](/reference/plugins/validation/http/sftp)/[FTPS](/reference/plugins/validation/http/ftps), 
 	[acme-dns](/reference/plugins/validation/dns/acme-dns), 

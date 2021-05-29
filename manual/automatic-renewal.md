@@ -10,7 +10,7 @@ but will only do so when it's actually neccessary. The task is created by the pr
 after successfully creating the first certificate. The task runs every day and checks two 
 conditions to determine if it should renew:
 - If the certificate is getting too old. This is based on the known history stored in the file.
-- If the target (list of domains) has changed, e.g. an extra binding has been added to an IIS site.
+- If the source (list of domains) has changed, e.g. an extra binding has been added to an IIS site.
 
 ### Customization
 The default renewal period of 55 days can be changed in [settings.json](/reference/settings).

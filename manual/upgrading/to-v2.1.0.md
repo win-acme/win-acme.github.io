@@ -19,7 +19,7 @@ needs with `settings.config`, custom plugins or custom Serilog configuration wil
 these modifications. 
 
 - Custom plugins will have to be modified to conform to the new async interfaces of this version of win-acme. 
-Also they will have to be targeted to build for .NET Core 3.1. Note that this does not affect installation or
+Also they will have to be targeted to build for .NET 5. Note that this does not affect installation or
 DNS scripts, only additional `.dll`s.
 - settings.config has been replaced with [settings.json](/reference/settings). The format is more
 readable and nicely structured, but if you have some custom settings, you will have to re-apply them.

@@ -18,7 +18,7 @@ modify the `.json` files on disk.
 
 ### Interactive
 - Choose `M` in the main menu (create with full options)
-- Choose "Manually input host names" as target
+- Choose "Manually input host names" as source
 - Input the domain name(s)
 - Choose or accept the friendly name
 - Pick a validation method. Most common would be to save to a local path
@@ -27,7 +27,7 @@ modify the `.json` files on disk.
 - And so on...
 
 ### Unattended 
-`wacs.exe --target manual --host www.example.com --validation filesystem --webroot "C:\htdocs\www\example.com" --store pemfiles --pemfilespath C:\apache-certs`
+`wacs.exe --source manual --host www.example.com --validation filesystem --webroot "C:\htdocs\www\example.com" --store pemfiles --pemfilespath C:\apache-certs`
 
 ### Pro tip
 If you don't want to have to specify the path for the `.pem` files each time, you can 
@@ -94,6 +94,6 @@ This script is called with parameters:
 `LEWSuriDirectory CertFolder DomainName`
 
 For example:
-`wacs.exe --target manual --host www.example.com --webroot "C:\htdocs\www\example.com" --validation filesystem --script "installcert.cmd" --scriptparameters "acme-v02.api.letsencrypt.org C:\cert www.example.com"`
+`wacs.exe --source manual --host www.example.com --webroot "C:\htdocs\www\example.com" --validation filesystem --script "installcert.cmd" --scriptparameters "acme-v02.api.letsencrypt.org C:\cert www.example.com"`
 
 Also you must specify a new path to the folder with certificates in your `httpd-vhosts.conf`.

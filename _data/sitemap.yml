@@ -74,15 +74,15 @@ reference:
 - title: Plugins
   url: /reference/plugins/
   subs: 
-    - title: Target
-      url: /reference/plugins/target/
+    - title: Source
+      url: /reference/plugins/source/
       subs:
         - title: IIS
-          url: /reference/plugins/target/iis
+          url: /reference/plugins/source/iis
         - title: Manual
-          url: /reference/plugins/target/manual
+          url: /reference/plugins/source/manual
         - title: CSR
-          url: /reference/plugins/target/csr
+          url: /reference/plugins/source/csr
 
     - title: Validation
       url: /reference/plugins/validation/
