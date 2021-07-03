@@ -483,7 +483,7 @@ applicable when `--bar` is set to `baz` or `qux`.
 
 ```
 ## DigitalOcean
-``` [-validation digitalocean] ```
+``` [--validation digitalocean] ```
 ```
    --digitaloceanapitoken
      The API token to authenticate against the DigitalOcean
@@ -525,6 +525,19 @@ applicable when `--bar` is set to `baz` or `qux`.
 
    --luadnsapikey
      LuaDNS API key.
+
+```
+## Rest plugin
+``` [--validation rest] ```
+```
+   --rest-securitytoken
+     The bearer token needed to authenticate with the REST API
+     on the server for PUT / DELETE requests.
+
+   --rest-usehttps
+     If HTTPS should be used instead of HTTP. Must be true if
+     the server has HTTP to HTTPS redirection configured, as
+     the redirected request always uses the GET method.
 
 ```
 ## Route53
