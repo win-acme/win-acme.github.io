@@ -4,12 +4,4 @@ sidebar: reference
 
 # Target plugins
 
-A target plugin is responsible for providing information about a (potential) certificate to the rest of the program. 
-Its primary purpose is to determine which host names should be included in the SAN list, but can also provide extra 
-information such as the preferred common name or bindings to exclude.
-
-## Default
-
-There is no default target plugin, it always has to be chosen by the user, either using the `--target` 
-parameter that triggers unattended mode, or using the "Create renewal" menu. The default plugin 
-suggested by the UI can be changed in [settings.json](/reference/settings).
+Target plugins are called [source plugins](/reference/plugins/source) since version 2.1.18.

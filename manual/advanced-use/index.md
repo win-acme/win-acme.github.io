@@ -21,7 +21,7 @@ this seems overwhelming: most options have sensible defaults that you can select
 pressing `<Enter>` in response to a question.
 
 - Choose `M` in the main menu to create a new certificate in full options mode
-- Choose a [target plugin](/reference/plugins/target/) that will be used 
+- Choose a [source plugin](/reference/plugins/source/) that will be used 
   to determine for which domain(s) the certificate should be issued.
 - Choose a [validation plugin](/reference/plugins/validation/) to pick the
   method that will be used to prove ownership of your domain(s) to the ACME server.
@@ -53,23 +53,23 @@ everything that is possible in interactive mode (and more) without having to jum
 This is great way to make win-acme part of a larger automation workflow.
 
 ### Examples
-The `--target` switch, used to select a [target plugin](/reference/plugins/target/), 
+The `--source` switch, used to select a [source plugin](/reference/plugins/source/), 
 triggers the unattended creation of new certificate.
 
-- `--target manual` - selects the [manual plugin](/reference/plugins/target/manual).
-- `--target iis` - selects the [iis plugin](/reference/plugins/target/iis).
+- `--source manual` - selects the [manual plugin](/reference/plugins/source/manual).
+- `--source iis` - selects the [iis plugin](/reference/plugins/source/iis).
 
 Each plugin has their own inputs which it needs to generate the certificate, for example:
 
-```wacs.exe --target manual --host www.domain.com --webroot C:\sites\wwwroot```
-```wacs.exe --target iis --siteid 1 --excludebindings exclude.me```
+```wacs.exe --source manual --host www.domain.com --webroot C:\sites\wwwroot```
+```wacs.exe --source iis --siteid 1 --excludebindings exclude.me```
 
 There are some other parameters needed for first-time unattended use (e.g. on a clean server) 
 to create the Let's Encrypt registration automatically (```--emailaddress myaddress@example.com --accepttos```). 
 So a full command line to create a certificate for IIS site 1 on a clean server (except for 
 the 'exclude.me' binding) would look like this:
 
-```wacs.exe --target iis --siteid 1 --excludebindings exclude.me --emailaddress myaddress@example.com --accepttos```
+```wacs.exe --source iis --siteid 1 --excludebindings exclude.me --emailaddress myaddress@example.com --accepttos```
 
 #### More examples
 Some application-specific examples are available [here](/manual/advanced-use/examples).

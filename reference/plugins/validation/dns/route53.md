@@ -14,6 +14,6 @@ The IAM role method can only work from inside a current EC2 instance.
 
 ## Unattended 
 - User:
-`--validation route53 --validationmode dns-01 --route53accesskeyid x --route53secretaccesskey ***`
+`--validation route53 --route53accesskeyid x --route53secretaccesskey ***`
 - IAM  role:
-`--validation route53 --validationmode dns-01 --route53iamrole x`
+`--validation route53 --route53iamrole x`

@@ -3,7 +3,4 @@ sidebar: reference
 ---
 
 # Manual
-Manually input host names. The first name will be the common name of the certificate, the other will only be in the SAN list.
-
-## Unattended 
-`--target manual --host a.example.com,b.example.com`
+Target plugins are called [source plugins](/reference/plugins/source) since version 2.1.18. This content has moved [here](/reference/plugins/source/manual).

@@ -64,14 +64,18 @@ applicable when `--bar` is set to `baz` or `qux`.
    --list
      List all created renewals in unattended mode.
 
+   --encrypt
+     Rewrites all renewal information using current
+     EncryptConfig setting
+
    --id
-     [--target|--cancel|--renew|--revoke] Id of a new or
+     [--source|--cancel|--renew|--revoke] Id of a new or
      existing renewal, can be used to override the default when
      creating a new renewal or to specify a specific renewal
      for other commands.
 
    --friendlyname
-     [--target|--cancel|--renew|--revoke] Friendly name of a
+     [--source|--cancel|--renew|--revoke] Friendly name of a
      new or existing renewal, can be used to override the
      default when creating a new renewal or to specify a
      specific renewal for other commands. In the latter case a
@@ -84,8 +88,8 @@ applicable when `--bar` is set to `baz` or `qux`.
      multiple patterns can be combined by comma seperating
      them.
 
-   --target
-     Specify which target plugin to run, bypassing the main
+   --source
+     Specify which source plugin to run, bypassing the main
      menu and triggering unattended mode.
 
    --validation
@@ -126,10 +130,6 @@ applicable when `--bar` is set to `baz` or `qux`.
    --usedefaulttaskuser
      (Obsolete) Avoid the question about specifying the task
      scheduler user, as such defaulting to the SYSTEM account.
-
-   --encrypt
-     Rewrites all renewal information using current
-     EncryptConfig setting
 
    --setuptaskscheduler
      Create or update the scheduled task according to the
@@ -181,7 +181,7 @@ applicable when `--bar` is set to `baz` or `qux`.
 ```
    --installationsiteid
      Specify site to install new bindings to. Defaults to the
-     target if that is an IIS site.
+     source if that is an IIS site.
 
    --sslport
      Port number to use for newly created HTTPS bindings.
@@ -197,12 +197,14 @@ applicable when `--bar` is set to `baz` or `qux`.
 ```
    --script
      Path to script file to run after retrieving the
-     certificate. This may be a .exe or .bat. Refer to the Wiki
-     for instructions on how to run .ps1 files.
+     certificate. This may be any executable file or a
+     Powershell (.ps1) script.
 
    --scriptparameters
      Parameters for the script to run after retrieving the
-     certificate. Refer to the Wiki for further instructions.
+     certificate. Refer to
+     https://win-acme.com/reference/plugins/installation/script
+     for further instructions.
 
 ```
 # Store
@@ -211,11 +213,11 @@ applicable when `--bar` is set to `baz` or `qux`.
 ``` [--store centralssl] ```
 ```
    --centralsslstore
-     When using this setting, certificate files are stored to
-     the CCS and IIS bindings are configured to reflect that.
+     Location of the IIS Central Certificate Store.
 
    --pfxpassword
-     Password to set for .pfx files exported to the IIS CSS.
+     Password to set for .pfx files exported to the IIS Central
+     Certificate Store.
 
 ```
 ## Certificate Store plugin
@@ -239,7 +241,7 @@ applicable when `--bar` is set to `baz` or `qux`.
 ``` [--store pemfiles] ```
 ```
    --pemfilespath
-     .pem files are exported to this folder
+     .pem files are exported to this folder.
 
    --pempassword
      Password to set for the private key .pem file.
@@ -258,6 +260,12 @@ applicable when `--bar` is set to `baz` or `qux`.
 ## Azure KeyVault
 ``` [--store keyvault] ```
 ```
+   --vaultname
+     The name of the vault
+
+   --certificatename
+     The name of the certificate
+
    --azureenvironment
      This can be used to specify a specific Azure endpoint.
      Valid inputs are AzureCloud (default), AzureChinaCloud,
@@ -268,25 +276,22 @@ applicable when `--bar` is set to `baz` or `qux`.
      Use Managed Service Identity for authentication.
 
    --azuretenantid
-     Tenant ID to login into Microsoft Azure.
+     Directory/tenant identifier. Found in Azure AD >
+     Properties.
 
    --azureclientid
-     Client ID to login into Microsoft Azure.
+     Application/client identifier. Found/created in Azure AD >
+     App registrations.
 
    --azuresecret
-     Secret to login into Microsoft Azure.
-
-   --vaultname
-     The name of the vault
-
-   --certificatename
-     The name of the certificate
+     Client secret. Found/created under Azure AD > App
+     registrations.
 
 ```
 # Target
 
 ## CSR plugin
-``` [--target csr] ```
+``` [--source csr] ```
 ```
    --csrfile
      Specify the location of a CSR file to make a certificate
@@ -298,7 +303,7 @@ applicable when `--bar` is set to `baz` or `qux`.
 
 ```
 ## IIS plugin
-``` [--target iis] ```
+``` [--source iis] ```
 ```
    --siteid
      Identifiers of one or more sites to include. This may be a
@@ -310,12 +315,12 @@ applicable when `--bar` is set to `baz` or `qux`.
 
    --host-pattern
      Pattern filter for host names. Can be used to dynamically
-     include bindings based on their match with the pattern.
-     You may use a `*` for a range of any characters and a `?`
-     for any single character. For example: the pattern
-     `example.*` will match `example.net` and `example.com`
-     (but not `my.example.com`) and the pattern `?.example.com`
-     will match `a.example.com` and `b.example.com` (but not
+     include bindings based on their match with the pattern.You
+     may use a `*` for a range of any characters and a `?` for
+     any single character. For example: the pattern `example.*`
+     will match `example.net` and `example.com` (but not
+     `my.example.com`) and the pattern `?.example.com` will
+     match `a.example.com` and `b.example.com` (but not
      `www.example.com`). Note that multiple patterns can be
      combined by comma seperating them.
 
@@ -326,7 +331,7 @@ applicable when `--bar` is set to `baz` or `qux`.
 
    --commonname
      Specify the common name of the certificate that should be
-     requested for the target. By default this will be the
+     requested for the source. By default this will be the
      first binding that is enumerated.
 
    --excludebindings
@@ -335,7 +340,7 @@ applicable when `--bar` is set to `baz` or `qux`.
 
 ```
 ## Manual plugin
-``` [--target manual] ```
+``` [--source manual] ```
 ```
    --commonname
      Specify the common name of the certificate. If not
@@ -348,6 +353,17 @@ applicable when `--bar` is set to `baz` or `qux`.
 ```
 # Validation
 
+## Common HTTP validation options
+``` [--validation filesystem|ftp|sftp|webdav] ```
+```
+   --webroot
+     Root path of the site that will serve the HTTP validation
+     requests.
+
+   --manualtargetisiis
+     Copy default web.config to the .well-known directory.
+
+```
 ## SelfHosting plugin
 ``` [--validationmode tls-alpn-01 --validation selfhosting] ``` (default)
 ```
@@ -364,20 +380,6 @@ applicable when `--bar` is set to `baz` or `qux`.
    --validationsiteid
      Specify IIS site to use for handling validation requests.
      This will be used to choose the web root path.
-
-```
-## Common HTTP validation options
-``` [--validation filesystem|ftp|sftp|webdav] ```
-```
-   --webroot
-     Root path of the site that will serve the HTTP validation
-     requests.
-
-   --warmup
-     Not used (warmup is the new default).
-
-   --manualtargetisiis
-     Copy default web.config to the .well-known directory.
 
 ```
 ## SelfHosting plugin
@@ -397,14 +399,14 @@ applicable when `--bar` is set to `baz` or `qux`.
 
 ```
 ## AcmeDns
-``` [--validationmode dns-01 --validation acme-dns] ```
+``` [--validation acme-dns] ```
 ```
    --acmednsserver
      Root URI of the acme-dns service
 
 ```
 ## Script
-``` [--validationmode dns-01 --validation script] ```
+``` [--validation script] ```
 ```
    --dnsscript
      Path to script that creates and deletes validation
@@ -416,16 +418,16 @@ applicable when `--bar` is set to `baz` or `qux`.
      Path to script that creates the validation TXT record.
 
    --dnscreatescriptarguments
-     Default parameters passed to the script are create
-     {Identifier} {RecordName} {Token}, but that can be
+     Default parameters passed to the script are "create
+     {Identifier} {RecordName} {Token}", but that can be
      customized using this argument.
 
    --dnsdeletescript
      Path to script to remove TXT record.
 
    --dnsdeletescriptarguments
-     Default parameters passed to the script are delete
-     {Identifier} {RecordName} {Token}, but that can be
+     Default parameters passed to the script are "delete
+     {Identifier} {RecordName} {Token}", but that can be
      customized using this argument.
 
 ```
@@ -433,15 +435,24 @@ applicable when `--bar` is set to `baz` or `qux`.
 ``` [--validation ftp|sftp|webdav] ```
 ```
    --username
-     User name for WebDav/(s)ftp server
+     Username for remote server
 
    --password
-     Password for WebDav/(s)ftp server
+     Password for remote server
 
 ```
 ## Azure
-``` [--validationmode dns-01 --validation azure] ```
+``` [--validation azure] ```
 ```
+   --azuresubscriptionid
+     Subscription ID to login into Microsoft Azure DNS.
+
+   --azureresourcegroupname
+     The name of the resource group within Microsoft Azure DNS.
+
+   --azurehostedzone
+     Hosted zone (blank to find best match)
+
    --azureenvironment
      This can be used to specify a specific Azure endpoint.
      Valid inputs are AzureCloud (default), AzureChinaCloud,
@@ -452,61 +463,85 @@ applicable when `--bar` is set to `baz` or `qux`.
      Use Managed Service Identity for authentication.
 
    --azuretenantid
-     Tenant ID to login into Microsoft Azure.
+     Directory/tenant identifier. Found in Azure AD >
+     Properties.
 
    --azureclientid
-     Client ID to login into Microsoft Azure.
+     Application/client identifier. Found/created in Azure AD >
+     App registrations.
 
    --azuresecret
-     Secret to login into Microsoft Azure.
-
-   --azuresubscriptionid
-     Subscription ID to login into Microsoft Azure DNS.
-
-   --azureresourcegroupname
-     The name of the resource group within Microsoft Azure DNS.
+     Client secret. Found/created under Azure AD > App
+     registrations.
 
 ```
 ## Cloudflare
-``` [--validationmode dns-01 --validation cloudflare] ```
+``` [--validation cloudflare] ```
 ```
    --cloudflareapitoken
      API Token for Cloudflare.
 
 ```
 ## DigitalOcean
-``` [--validationmode dns-01 --validation digitalocean] ```
+``` [--validation digitalocean] ```
 ```
    --digitaloceanapitoken
-     The API token to authenticate against the DigitalOcean API
+     The API token to authenticate against the DigitalOcean
+     API.
 
 ```
 ## Dreamhost
-``` [--validationmode dns-01 --validation dreamhost] ```
+``` [--validation dreamhost] ```
 ```
-   --apiKey
+   --apikey
      Dreamhost API key.
 
 ```
-## Godaddy
-``` [--validationmode dns-01 --validation godday] ```
+## GoDaddy
+``` [--validation godaddy] ```
 ```
    --apikey
      GoDaddy API key.
 
+   --apisecret
+     GoDaddy API secret.
+
+```
+## Google Cloud DNS
+``` [--validation gcpdns] ```
+```
+   --serviceaccountkey
+     Service Account Key to authenticate with GCP
+
+   --projectid
+     Project ID that is hosting Cloud DNS.
+
 ```
 ## LuaDns
-``` [--validationmode dns-01 --validation luadns] ```
+``` [--validation luadns] ```
 ```
    --luadnsusername
-     LuaDNS account username (email address)
+     LuaDNS account username (email address).
 
    --luadnsapikey
-     LuaDNS API key
+     LuaDNS API key.
+
+```
+## Rest plugin
+``` [--validation rest] ```
+```
+   --rest-securitytoken
+     The bearer token needed to authenticate with the REST API
+     on the server for PUT / DELETE requests.
+
+   --rest-usehttps
+     If HTTPS should be used instead of HTTP. Must be true if
+     the server has HTTP to HTTPS redirection configured, as
+     the redirected request always uses the GET method.
 
 ```
 ## Route53
-``` [--validationmode dns-01 --validation route53] ```
+``` [--validation route53] ```
 ```
    --route53iamrole
      AWS IAM role for the current EC2 instance to login into
@@ -520,7 +555,7 @@ applicable when `--bar` is set to `baz` or `qux`.
 
 ```
 ## TransIp
-``` [--validationmode dns-01 --validation transip] ```
+``` [--validation transip] ```
 ```
    --transip-login
      Login name at TransIp.

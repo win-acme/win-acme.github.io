@@ -283,12 +283,12 @@ Default: `600`
 Time in seconds to allow installation and DNS scripts to run before
 terminating them forcefully.
 
-## Target
+## Source
 
-### `DefaultTarget`
+### `DefaultSource`
 Default: `null`
 
-Default target plugin. This only affects the menu in the UI. `null` 
+Default source plugin. This only affects the menu in the UI. `null` 
 equivalent to `"iis"` with `"manual"` as backup for non-administrators 
 or systems without IIS.
 

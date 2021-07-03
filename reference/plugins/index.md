@@ -13,7 +13,7 @@ In "full options" mode, you will be asked to pick each of these plugins.
 From the command line you can also rely on the configured defaults or explicitly provide which 
 one(s) you want. Check the [command line reference](/reference/cli) to see how.
 
-- A [target plugin](/reference/plugins/target/) determines which domains to include in the renewal.
+- A [source plugin](/reference/plugins/source/) determines which domains to include in the renewal.
 - An [order plugin](/reference/plugins/order/) divides these domains over one or more certificates to be ordered.
 - A [validation plugin](/reference/plugins/validation/) provides the ACME server with proof that you own the domain(s).
 - A [CSR plugin](/reference/plugins/csr/) determines the (type of) private key and extensions to use for the certificate(s).
