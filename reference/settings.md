@@ -50,7 +50,7 @@ Default: `50`
 The number of items to display per page in list views.
 
 ### `TextEncoding`
-Default: `"utf8"`
+Default: `"utf-8"`
 
 Encoding to use for the console output. A list of possible values can be
 found [here](https://docs.microsoft.com/en-us/dotnet/api/system.text.encoding?view=netcore-3.0).
@@ -81,11 +81,10 @@ Default: `true`
 
 Use [POST-as-GET] mode as defined in 
 [RFC8555](https://tools.ietf.org/html/rfc8555#section-6.3), 
-will be required by Let's Encrypt in production from November 2020, 
-and in test from November 2019.
+as required by Let's Encrypt since November 2020.
 
 ### `RetryCount`
-Default: `5`
+Default: `15`
 
 Maximum numbers of times to refresh validation and order status, while
 waiting for the ACME server to complete its tasks.
@@ -111,8 +110,12 @@ Android releases (until September 30th, 2021).
 Default: `"[System]"`
 
 Configures a proxy server to use for communication with the ACME server and
-other HTTP requests done by the program. The default setting uses the 
-system proxy. Passing an empty string will try to bypass the system proxy.
+other HTTP requests done by the program. The default setting (which is equivalent 
+to `[wininet]`) uses the proxy as defined by the legacy Windows Internet API. 
+You can also `[winhttp]` to use the more modern Windows HTTP API. 
+Honestly `[winhttp]` **should** be the default, but isn't because of backwards 
+compatiblity. Leaving the value empty/null tries to bypass any proxy. You 
+can also configure a specific proxy URL.
 
 ### `Username`
 Default: `null`
@@ -122,7 +125,8 @@ Username used to access the proxy server.
 ### `Password`
 Default: `null`
 
-Password used to access the proxy server.
+Password used to access the proxy server. This may be a reference to the
+[secret vault](/manual/advanced-use/secret-management).
 
 ## Cache
 
@@ -131,7 +135,7 @@ Default: `null`
 
 The path where certificates and request files are cached. If not specified or invalid,
 this defaults to `{ConfigurationPath}\Certificates`. If you are using 
-[CentralSsl](//reference/plugins/store/centralssl), this can **not** 
+[CentralSsl](/reference/plugins/store/centralssl), this can **not** 
 be set to the same path. Values should be JSON-encoded, e.g. `"C:\\"`
 (note the double backslash).
 
@@ -162,6 +166,13 @@ currently for a max of 90 days so it is advised to not increase the days much.
 If you increase the days, please note that you will have less time to fix any 
 issues if the certificate doesn't renew correctly.
 
+### `RenewalMinimumValidDays `
+Default: `null` (which is interpreted as 7 days)
+
+The minimum number of days a certificate should still be valid. If the certificate
+is valid for a smaller number of days, it will be renewed regardless of the 
+`RenewalDays` setting.
+
 ### `StartBoundary`
 Default: `"09:00:00"` (9:00 am)
 
@@ -174,9 +185,11 @@ Configures time after which the scheduled task will be
 terminated if it hangs for whatever reason.
 
 ### `RandomDelay`
-Default: `"00:00:00"`
+Default: `"04:00:00"` (4 hours)
 
 Configures random time to wait for starting the scheduled task.
+This spreads the load on the servers and thus prevents users
+from getting `TooManyRequests` errors.
 
 ## Notifications
 
@@ -199,7 +212,8 @@ User name for the SMTP server, in case of authenticated SMTP.
 ### `SmtpPassword`
 Default: `null`
 
-Password for the SMTP server, in case of authenticated SMTP.
+Password for the SMTP server, in case of authenticated SMTP. 
+This may be a reference to the [secret vault](/manual/advanced-use/secret-management).
 
 ### `SmtpSecure`
 Default: `false`
@@ -404,7 +418,8 @@ When using `--store centralssl` this password is used by default for the pfx
 files, saving you the effort from providing it manually. Filling this out makes
 the `--pfxpassword` parameter unnecessary in most cases. Renewals created with
 the default password will automatically change to any future default value, 
-meaning this is also a good practice for maintainability.
+meaning this is also a good practice for maintainability. This may be a reference 
+to the [secret vault](/manual/advanced-use/secret-management).
 
 ### `PemFiles.DefaultPath`
 Default: `null`
@@ -423,7 +438,8 @@ When using `--store pemfiles` this password is used by default for the pfx
 files, saving you the effort from providing it manually. Filling this out makes
 the `--pempassword` parameter unnecessary in most cases. Renewals created with
 the default password will automatically change to any future default value, 
-meaning this is also a good practice for maintainability.
+meaning this is also a good practice for maintainability. This may be a reference 
+to the [secret vault](/manual/advanced-use/secret-management).
 
 ### `PfxFile.DefaultPath`
 Default: `null`
@@ -442,7 +458,8 @@ When using `--store pfxfile` this password is used by default for the pfx
 files, saving you the effort from providing it manually. Filling this out makes
 the `--pfxpassword` parameter unnecessary in most cases. Renewals created with
 the default password will automatically change to any future default value, 
-meaning this is also a good practice for maintainability.
+meaning this is also a good practice for maintainability. This may be a reference 
+to the [secret vault](/manual/advanced-use/secret-management).
 
 ## Installation
 
