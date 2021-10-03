@@ -127,10 +127,6 @@ applicable when `--bar` is set to `baz` or `qux`.
    --notaskscheduler
      Do not create (or offer to update) the scheduled task.
 
-   --usedefaulttaskuser
-     (Obsolete) Avoid the question about specifying the task
-     scheduler user, as such defaulting to the SYSTEM account.
-
    --setuptaskscheduler
      Create or update the scheduled task according to the
      current settings.
