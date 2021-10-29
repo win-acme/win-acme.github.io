@@ -15,8 +15,8 @@ one(s) you want. Check the [command line reference](/reference/cli) to see how.
 
 - A [source plugin](/reference/plugins/source/) determines which domains to include in the renewal.
 - An [order plugin](/reference/plugins/order/) divides these domains over one or more certificates to be ordered.
-- A [validation plugin](/reference/plugins/validation/) provides the ACME server with proof that you own the domain(s).
 - A [CSR plugin](/reference/plugins/csr/) determines the (type of) private key and extensions to use for the certificate(s).
+- A [validation plugin](/reference/plugins/validation/) provides the ACME server with proof that you own the domain(s).
 - One or more [store plugins](/reference/plugins/store/) place the certificate(s) in a specific location and format.
 - One or more [installation plugins](/reference/plugins/installation/) make changes to your application(s) configuration.
 

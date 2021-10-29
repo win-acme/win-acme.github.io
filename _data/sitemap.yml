@@ -172,9 +172,7 @@ reference:
     - title: Installation
       url: /reference/plugins/installation/
       subs:
-        - title: IIS HTTPS bindings
-          url: /reference/plugins/installation/iisweb
-        - title: IIS FTPS bindings
-          url: /reference/plugins/installation/iisftp
+        - title: IIS bindings
+          url: /reference/plugins/installation/iis
         - title: Script
           url: /reference/plugins/installation/script
