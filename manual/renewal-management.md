@@ -25,10 +25,19 @@ combinations of [plugins](/reference/plugins/), so it's complex to figure out wh
 true intention of such a command should be. Therefore, modification and renewal are completely separate
 functions.
 
-Modifying a renewal is essential the same as re-creating it, either from the command line or the main menu. 
-If it turns out that a newly configured certificate has the same friendly name as a previously created one, 
-then the older settings will be overwritten. In interactive mode the user is asked to confirm this. In 
-unattended mode the script or program calling win-acme is assumed to know the consequences of its actions.
+Editing a renewal can be done through interactive mode using the menu `Manage renewals`, by selecting the
+renewal that you would like to modify and then choosing `Edit renewal`. At that point you can either
+fully reconfigure it, or change a single stage/plugin.
+
+From the command line you can modify a renewal by re-creating it. If it turns out that a newly configured 
+certificate has the same friendly name as a previously created one, then the older settings will be 
+overwritten. When this happens in interactive mode the user is asked to confirm this, but in unattended 
+mode the script or program calling win-acme is assumed to know the consequences of its actions. If you
+actually intend to create two very similar certificates, add the `--id` parameter to make them unique 
+and prevent overwrites based on the friendly name.
+
+You can also edit the `.json` file, but that's not recommended unless you are already familiar with this
+file format and have a backup ready.
 
 ## Deleting/cancelling
 To cancel a renewal means that the certificate will not be renewed anymore. The certificate, bindings 
