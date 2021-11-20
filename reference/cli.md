@@ -165,14 +165,7 @@ applicable when `--bar` is set to `baz` or `qux`.
 ```
 # Installation
 
-## IIS FTP plugin
-``` [--installation iisftp] ```
-```
-   --ftpsiteid
-     Site id to install certificate to.
-
-```
-## IIS Web plugin
+## IIS plugin
 ``` [--installation iis] ```
 ```
    --installationsiteid

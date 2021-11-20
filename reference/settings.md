@@ -99,10 +99,33 @@ Default: `null`
 
 In some exceptional cases an ACME service will offer multiple certificates
 signed by different root authorities. This setting can be used to give a 
-preference. I.e. `"ISRG Root X1"` can be used to prefer Let's Encrypt first 
-fully self-signed root before it becomes the default on January 11th, 2021, 
-and `"DST Root CA X3"` can be set for backwards compatibility with old 
-Android releases (until September 30th, 2021).
+preference. I.e. `"ISRG Root X1"` can be used to prefer Let's Encrypt 
+self-signed chain over the backwards compatible `"DST Root CA X3"`. Note
+that this only really works for Apache and other software that uses .pem
+files to store certificates. Windows has its own opinions about how 
+chains should be built that are difficult to influence. For maximum
+compatibility with legacy clients we recommend using an alternative provider
+like [ZeroSSL](https://zerossl.com/).
+
+## Execution
+
+### `DefaultPreExecutionScript`
+
+Path to a script that is executed before renewing a certificate. This may
+be useful to temporarely relax security measures, e.g. opening port 80
+on the firewall.
+
+### `DefaultPostExecutionScript`
+
+Path to a script that is called after renewing a certificate, this may
+be useful to undo any actions taken by the script configured as the 
+`DefaultPreExecutionScript`. Not to be confused with the 
+[script installation](/reference/plugins/installation/script) plugin.
+The difference is that the installation plugin can be configured 
+seperately for each renewal and has access to a lot more context about 
+the new and previous certificates. Also when the installation script fails,
+the renewal will be retried later. That is not the case for the pre/post 
+execution scripts. Any errors there are logged but otherwise ignored.
 
 ## Proxy
 

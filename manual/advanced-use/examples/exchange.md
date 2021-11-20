@@ -20,16 +20,19 @@ Assumptions made in this example:
 
 ## Interactive
 It's not recommended to configure a certificate for Exchange in interactive mode, 
-because some settings like `--acl-fullcontrol` (essential for installation of some updates)
-and `--certificatestore My` are not accessible from the menu. The latter can be configured
-in settings.json but the former not.
+because the settings `--acl-fullcontrol` (essential for installation of some updates) 
+is not accessible from the menu. 
 
 ## Unattended
+Important note for Hybrid Exchange configurations (synced to Office 365): you should use 0 instead of 1 in the 
+`--scriptparameters`, which translates to the `LeaveOldExchangeCerts` input of the sample script. 
+See [this issue](https://github.com/win-acme/win-acme/issues/1754) for more details.
+
 - Windows Certificate Store (default)
-  `wacs.exe --source manual --host mail.example.com,webmail.example.com,autodiscover.example.com --certificatestore My --acl-fullcontrol "network service,administrators" --installation iis,script --installationsiteid 1 --script "./Scripts/ImportExchange.ps1" --scriptparameters "'{CertThumbprint}' 'IIS,SMTP,IMAP' 1 '{CacheFile}' '{CachePassword}' '{CertFriendlyName}'"`
+  `wacs.exe --source manual --host mail.example.com,webmail.example.com,autodiscover.example.com --certificatestore My --acl-fullcontrol "network service,administrators" --installation iis,script --installationsiteid 1 --script "./Scripts/ImportExchange.v2.ps1" --scriptparameters "'{CertThumbprint}' 'IIS,SMTP,IMAP' 1 '{CacheFile}' '{CachePassword}' '{CertFriendlyName}'"`
 
 - Central Certificate Store (load balancing etc.)
-`wacs.exe --source manual --host mail.example.com,webmail.example.com,autodiscover.example.com --store centralssl --centralsslstore "C:\Central SSL" --installation iis,script --installationsiteid 1 --script "./Scripts/ImportExchange.ps1" --scriptparameters "'{CertThumbprint}' 'IIS,SMTP,IMAP' 1 '{CacheFile}' '{CachePassword}' '{CertFriendlyName}'"`
+`wacs.exe --source manual --host mail.example.com,webmail.example.com,autodiscover.example.com --store centralssl --centralsslstore "C:\Central SSL" --installation iis,script --installationsiteid 1 --script "./Scripts/ImportExchange.v2.ps1" --scriptparameters "'{CertThumbprint}' 'IIS,SMTP,IMAP' 1 '{CacheFile}' '{CachePassword}' '{CertFriendlyName}'"`
 
 ## Verification
 To make sure all is working properly, I'd encourage you to use the 
