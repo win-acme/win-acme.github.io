@@ -112,8 +112,8 @@ applicable when `--bar` is set to `baz` or `qux`.
      default. This may be a comma-separated list.
 
    --installation
-     Specify which installation plugins to use. IIS is the
-     default. This may be a comma-separated list.
+     Specify which installation plugins to use, if any. 
+     This may be a comma-separated list.
 
    --closeonfinish
      [--test] Close the application when complete, which
