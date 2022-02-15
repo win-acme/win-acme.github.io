@@ -302,8 +302,11 @@ The curve to use for EC certificates.
 ### `PrivateKeyExportable`
 Default: `false`
 
-If set to `true`, it will be possible to export the generated certificates from
-the certificate store, for example to move them to another server.
+If set to `true`, certificates stored in the Windows Certificate Store
+will be marked as exportable, allowing you to transfer them to other 
+computers. Note that this setting doesn't apply retroactively but only
+to certificates issued from the moment that setting has changed.
+For tips about migration please refer to [this page](/manual/migration).
 
 ### `EncryptConfig`
 Default: `true`
