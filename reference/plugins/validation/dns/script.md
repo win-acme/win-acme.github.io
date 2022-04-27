@@ -33,6 +33,18 @@ script will be `delete {Identifier} {RecordName} {Token}` by default. The order 
 customized by providing a diffent argument string, just like for the create script. You can also choose to use 
 the same script for create and delete, with each their own argument string.
 
+## Parallelism
+You can use `--dnsscriptparallelism` to specify if your script supports parallelism. This only has any 
+effect when `DisableParallelism` is set to `false` in `settings.config`. You may use the following values:
+
+| Value          |  Meaning |
+|----------------|----------------|
+| 0 | Serial, default serial behaviour	|
+| 1 | Allow multiple new records to created as the same time. Only do this when you are sure that a "create" request will not interfere with others running at the same time |
+| 2 | Allow multiple validations to run at the same time. This is possible in theory with any DNS provider, but you must be sure that your script is non-destructive, e.g. it should not overwrite pre-existing TXT records, nor delete more than the one specifically asked for |
+| 3 | Combination of 1 and 2 |
+
+
 ## Resources
 A lot of good reference scripts are available from the 
 [POSH-ACME](https://github.com/rmbolger/Posh-ACME/tree/master/Posh-ACME/DnsPlugins)

@@ -115,6 +115,8 @@ reference:
               url: /reference/plugins/validation/dns/cloudflare
             - title: DigitalOcean
               url: /reference/plugins/validation/dns/digitalocean
+            - title: Domainname.shop
+              url: /reference/plugins/validation/dns/domene
             - title: Dreamhost
               url: /reference/plugins/validation/dns/dreamhost
             - title: GoDaddy
@@ -123,10 +125,14 @@ reference:
               url: /reference/plugins/validation/dns/lua
             - title: Manual
               url: /reference/plugins/validation/dns/manual
+            - title: NS1
+              url: /reference/plugins/validation/dns/ns1
             - title: Route53 (Amazon)
               url: /reference/plugins/validation/dns/route53
             - title: Script
               url: /reference/plugins/validation/dns/script
+            - title: Simply
+              url: /reference/plugins/validation/dns/simply
             - title: TransIP
               url: /reference/plugins/validation/dns/transip
         - title: TLS validation

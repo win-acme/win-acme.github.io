@@ -3,7 +3,7 @@ sidebar: reference
 ---
 
 # Cloudflare 
-Create the record in Cloudflare DNS.
+Create the record in [Cloudflare DNS](https://www.cloudflare.com/dns/).
 
 {% include plugin-seperate.md %}
 

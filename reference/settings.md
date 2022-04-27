@@ -28,7 +28,8 @@ e.g. `"C:\\"` (note the double backslash).
 Default: `null`
 
 The path where log files for the past 31 days are stored. If not 
-specified or invalid, this defaults to `{ConfigurationPath}\Log`.
+specified or invalid, this defaults to `{ConfigurationPath}\Log`. 
+Values should be JSON-encoded, e.g. `"C:\\"` (note the double backslash).
 
 ### `VersionCheck`
 Default: `false`
@@ -189,6 +190,19 @@ currently for a max of 90 days so it is advised to not increase the days much.
 If you increase the days, please note that you will have less time to fix any 
 issues if the certificate doesn't renew correctly.
 
+### `RenewalDaysRange`
+Default: `0`
+
+To spread service load, program run time and/or to minimize downtime, those 
+managing a large amount of renewals may want to spread them out of the course 
+of multiple days/weeks. The number of days specified here will be substracted 
+from `RenewalDays` to create a range in which the renewal will e processed. 
+E.g. if `RenewalDays` is 55 and `RenewalDaysRange` is 10, the renewal will be 
+processed between 45 and 55 days after issuing. 
+
+If you use an order plugin to split your renewal into multiple orders, orders 
+may run on different days.
+
 ### `RenewalMinimumValidDays `
 Default: `null` (which is interpreted as 7 days)
 
@@ -323,6 +337,14 @@ Default: `600`
 Time in seconds to allow installation and DNS scripts to run before
 terminating them forcefully.
 
+### `PowershellExecutablePath`
+Default: `powershell.exe`
+
+Customize this value to use a different version of Powershell to
+execute `.ps1` scripts. E.g. `C:\\Program Files\\PowerShell\\6.0.0\\pwsh.exe` 
+for Powershell Core 6. Values should be JSON-encoded (note the double 
+backslashes in the example).
+
 ## Source
 
 ### `DefaultSource`
@@ -423,9 +445,10 @@ This may be a comma seperated value for multiple default store plugins.
 ### `CertificateStore.DefaultStore`
 Default: `null`
 
-The certificate store to save the certificates in. If left empty, certificates will
-be installed either in the `WebHosting` store, or if that is not available, 
-the `My` store (better known as `Personal`).
+The certificate store to save the certificates in. If left empty, 
+certificates will be installed either in the `WebHosting` store, or 
+if that is not available, the `My` store (better known in the
+Microsoft Management Console as as `Personal`).
 
 ### `CentralSsl.DefaultPath`
 Default: `null`

@@ -3,7 +3,7 @@ sidebar: reference
 ---
 
 # LuaDNS 
-Create the record in LuaDNS
+Create the record in [LuaDNS](http://www.luadns.com/)
 
 {% include plugin-seperate.md %}
 
