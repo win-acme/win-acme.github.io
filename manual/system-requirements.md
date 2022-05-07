@@ -3,14 +3,19 @@ sidebar: manual
 ---
 
 # System requirements
-- Officially Microsoft only supports Windows Server 2012 R2 SP1 and higher
-for .NET Core 3.1. The program has been tested on Windows Server 2012 and 
-2008 R2 as well, but no guarantees can be given.
+Officially Microsoft only supports Windows Server 2012 R2 SP1 and higher
+for .NET6, which this program builds on. The program has been known to work 
+on Windows Server 2012 as well, but no guarantees can be given. 
 
-# Startup problems
+Those stuck on Windows 2008 (sorry!) can try release [2.1.20](https://github.com/win-acme/win-acme/releases/tag/v2.1.20]), 
+which was the last one built on .NET5, or [2.0.12.1](https://github.com/win-acme/win-acme/releases/tag/v2.0.11.705),
+which was the last one built on .NET4. Neither of those releases are going
+to receive support anymore though.
+
+# Common startup problems
 - You may need to install [Microsoft Visual C++ 2015 Redistributable Update 3](https://www.microsoft.com/download/details.aspx?id=52685)
-- If you run into the error about `api-ms-win-crt-runtime-l1-1-0.dll` you may need [KB2999226](https://support.microsoft.com/help/2999226/update-for-universal-c-runtime-in-windows).
-- If you run into the error about `hostfxr.dll` you may need [KB2533623](https://support.microsoft.com/help/2533623/microsoft-security-advisory-insecure-library-loading-could-allow-remot).
+- If you run into an error about `api-ms-win-crt-runtime-l1-1-0.dll` you may need [KB2999226](https://support.microsoft.com/help/2999226/update-for-universal-c-runtime-in-windows).
+- If you run into an error about `hostfxr.dll` you may need [KB2533623](https://support.microsoft.com/help/2533623/microsoft-security-advisory-insecure-library-loading-could-allow-remot).
 - If you run into an error like `Failure processing application bundle.`, perhaps [this thread](https://github.com/win-acme/win-acme/issues/1632) might provide a solution.
 - If the program doesn't seem to start but an error like `Microsoft.Windows.Apprep.ChxApp_cw5n1h2txyewy:App.AppXc99k5qnnsvxj5szemm7fp3g7y08we5vm.mca` appears in the Event Viewer [this thread](https://github.com/win-acme/win-acme/issues/1491) might provide a solution. 
 
