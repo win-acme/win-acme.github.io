@@ -112,8 +112,8 @@ applicable when `--bar` is set to `baz` or `qux`.
      default. This may be a comma-separated list.
 
    --installation
-     Specify which installation plugins to use, if any. 
-     This may be a comma-separated list.
+     Specify which installation plugins to use (if any). This
+     may be a comma-separated list.
 
    --closeonfinish
      [--test] Close the application when complete, which
@@ -194,6 +194,73 @@ applicable when `--bar` is set to `baz` or `qux`.
      certificate. Refer to
      https://win-acme.com/reference/plugins/installation/script
      for further instructions.
+
+```
+# Source
+
+## CSR plugin
+``` [--source csr] ```
+```
+   --csrfile
+     Specify the location of a CSR file to make a certificate
+     for
+
+   --pkfile
+     Specify the location of the private key corresponding to
+     the CSR
+
+```
+## IIS plugin
+``` [--source iis] ```
+```
+   --siteid
+     Identifiers of one or more sites to include. This may be a
+     comma-separated list.
+
+   --host
+     Host name to filter. This parameter may be used to target
+     specific bindings. This may be a comma-separated list.
+
+   --host-pattern
+     Pattern filter for host names. Can be used to dynamically
+     include bindings based on their match with the pattern.You
+     may use a `*` for a range of any characters and a `?` for
+     any single character. For example: the pattern `example.*`
+     will match `example.net` and `example.com` (but not
+     `my.example.com`) and the pattern `?.example.com` will
+     match `a.example.com` and `b.example.com` (but not
+     `www.example.com`). Note that multiple patterns can be
+     combined by comma seperating them.
+
+   --host-regex
+     Regex pattern filter for host names. Some people, when
+     confronted with a problem, think "I know, I'll use regular
+     expressions." Now they have two problems.
+
+   --commonname
+     Specify the common name of the certificate that should be
+     requested for the source. By default this will be the
+     first binding that is enumerated.
+
+   --excludebindings
+     Exclude host names from the certificate. This may be a
+     comma-separated list.
+
+   --host-type
+     Specify which types of bindings to consider. May be set to
+     http, ftp or both (comma seperated)
+
+```
+## Manual plugin
+``` [--source manual] ```
+```
+   --commonname
+     Specify the common name of the certificate. If not
+     provided the first host name will be used.
+
+   --host
+     A host name to get a certificate for. This may be a
+     comma-separated list.
 
 ```
 # Store
@@ -277,69 +344,6 @@ applicable when `--bar` is set to `baz` or `qux`.
      registrations.
 
 ```
-# Target
-
-## CSR plugin
-``` [--source csr] ```
-```
-   --csrfile
-     Specify the location of a CSR file to make a certificate
-     for
-
-   --pkfile
-     Specify the location of the private key corresponding to
-     the CSR
-
-```
-## IIS plugin
-``` [--source iis] ```
-```
-   --siteid
-     Identifiers of one or more sites to include. This may be a
-     comma-separated list.
-
-   --host
-     Host name to filter. This parameter may be used to target
-     specific bindings. This may be a comma-separated list.
-
-   --host-pattern
-     Pattern filter for host names. Can be used to dynamically
-     include bindings based on their match with the pattern.You
-     may use a `*` for a range of any characters and a `?` for
-     any single character. For example: the pattern `example.*`
-     will match `example.net` and `example.com` (but not
-     `my.example.com`) and the pattern `?.example.com` will
-     match `a.example.com` and `b.example.com` (but not
-     `www.example.com`). Note that multiple patterns can be
-     combined by comma seperating them.
-
-   --host-regex
-     Regex pattern filter for host names. Some people, when
-     confronted with a problem, think "I know, I'll use regular
-     expressions." Now they have two problems.
-
-   --commonname
-     Specify the common name of the certificate that should be
-     requested for the source. By default this will be the
-     first binding that is enumerated.
-
-   --excludebindings
-     Exclude host names from the certificate. This may be a
-     comma-separated list.
-
-```
-## Manual plugin
-``` [--source manual] ```
-```
-   --commonname
-     Specify the common name of the certificate. If not
-     provided the first host name will be used.
-
-   --host
-     A host name to get a certificate for. This may be a
-     comma-separated list.
-
-```
 # Validation
 
 ## Common HTTP validation options
@@ -419,6 +423,12 @@ applicable when `--bar` is set to `baz` or `qux`.
      {Identifier} {RecordName} {Token}", but that can be
      customized using this argument.
 
+   --dnsscriptparallelism
+     Configure parallelism mode. 0 is fully serial (default), 1
+     allows multiple records to be created simulatenously, 2
+     allows multiple records to be validated simulateously and
+     3 is a combination of both forms of parallelism.
+
 ```
 ## Credentials
 ``` [--validation ftp|sftp|webdav] ```
@@ -479,6 +489,16 @@ applicable when `--bar` is set to `baz` or `qux`.
      API.
 
 ```
+## Domeneshop
+``` [--validation domeneshop] ```
+```
+   --clientid
+     Domeneshop ClientID (token)
+
+   --clientsecret
+     Domeneshop Client Secret
+
+```
 ## Dreamhost
 ``` [--validation dreamhost] ```
 ```
@@ -516,6 +536,13 @@ applicable when `--bar` is set to `baz` or `qux`.
      LuaDNS API key.
 
 ```
+## NS1
+``` [--validation ns1] ```
+```
+   --apikey
+     NS1 API key.
+
+```
 ## Rest plugin
 ``` [--validation rest] ```
 ```
@@ -541,6 +568,16 @@ applicable when `--bar` is set to `baz` or `qux`.
 
    --route53secretaccesskey
      Secret access key to login into Amazon Route 53.
+
+```
+## Simply
+``` [--validation simply] ```
+```
+   --account
+     Simply Account.
+
+   --apikey
+     Simply API key.
 
 ```
 ## TransIp

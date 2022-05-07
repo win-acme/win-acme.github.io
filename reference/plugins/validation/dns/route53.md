@@ -3,7 +3,7 @@ sidebar: reference
 ---
 
 # Route 53
-Create the record in Amazon Route53
+Create the record in Amazon AWS [Route53](https://aws.amazon.com/route53/)
 
 {% include plugin-seperate.md %}
 
