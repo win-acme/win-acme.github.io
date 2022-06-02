@@ -32,7 +32,7 @@ See [this issue](https://github.com/win-acme/win-acme/issues/1754) for more deta
   `wacs.exe --source manual --host mail.example.com,webmail.example.com,autodiscover.example.com --certificatestore My --acl-fullcontrol "network service,administrators" --installation iis,script --installationsiteid 1 --script "./Scripts/ImportExchange.v2.ps1" --scriptparameters "'{CertThumbprint}' 'IIS,SMTP,IMAP' 1 '{CacheFile}' '{CachePassword}' '{CertFriendlyName}'"`
 
 - Central Certificate Store (load balancing etc.)
-`wacs.exe --source manual --host mail.example.com,webmail.example.com,autodiscover.example.com  --store centralssl,certificatestore --certificatestore My --centralsslstore "C:\Central SSL" --installation iis,script --installationsiteid 1 --script "./Scripts/ImportExchange.v2.ps1" --scriptparameters "'{CertThumbprint}' 'IIS,SMTP,IMAP' 1 '{CacheFile}' '{CachePassword}' '{CertFriendlyName}'"`
+`wacs.exe --source manual --host mail.example.com,webmail.example.com,autodiscover.example.com  --store centralssl,certificatestore --certificatestore My  --acl-fullcontrol "network service,administrators" --centralsslstore "C:\Central SSL" --installation iis,script --installationsiteid 1 --script "./Scripts/ImportExchange.v2.ps1" --scriptparameters "'{CertThumbprint}' 'IIS,SMTP,IMAP' 1 '{CacheFile}' '{CachePassword}' '{CertFriendlyName}'"`
 
 ## Verification
 To make sure all is working properly, I'd encourage you to use the 
