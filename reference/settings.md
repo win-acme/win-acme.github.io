@@ -396,7 +396,7 @@ Default: `30`
 
 Amount of time in seconds to wait between each retry.
 
-### `AllowDnsSubstition`
+### `AllowDnsSubstitution`
 Default: `true`
 
 If your goal is to get a certificate for `example.com` using DNS validation, 
