@@ -2,7 +2,7 @@
 sidebar: reference
 ---
 
-# Dreamhost
+# GoDaddy
 Update record at [GoDaddy](https://www.godaddy.com/)
 
 {% include plugin-seperate.md %}
