@@ -8,4 +8,4 @@ the path provided by the `--pfxfilepath` parameter, or the `Store.PfxFile.Defaul
 setting in [settings.json](/reference/settings). 
 
 ## Unattended
-`--store pfxfile [--pfxfilepath C:\Certificates\]`
+`--store pfxfile [--pfxpassword *****] [--pfxfilepath C:\Certificates\]`

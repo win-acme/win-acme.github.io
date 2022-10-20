@@ -2,7 +2,7 @@
 sidebar: reference
 ---
 
-# SFTP
+# WebDAV
 This plugin pushes the validation challenge to a WebDav path.
 
 {% include validation-http-common.md %}

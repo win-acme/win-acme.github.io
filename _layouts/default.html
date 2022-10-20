@@ -42,23 +42,25 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="collapsibleNavbar">
-            <ul class="navbar-nav">
-                {% for item in site.data.sitemap.main %}
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ item.url }}">{{ item.title }}</a>
-                </li>
-                {% endfor %}
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Download</a>
-                    <div class="dropdown-menu">
-                        <a class="dropdown-item" href="https://github.com/win-acme/win-acme/releases/download/v{{ site.releasetag }}/win-acme.v{{ site.releasebuild }}.x64.trimmed.zip">{{ site.releasename }} <strong>(recommended)</strong></a>
-                        <a class="dropdown-item" href="https://github.com/win-acme/win-acme/releases/download/v{{ site.releasetag }}/win-acme.v{{ site.releasebuild }}.x64.pluggable.zip">{{ site.releasename }} (larger download, plugin support)</a>
-                        <a class="dropdown-item" href="https://github.com/win-acme/win-acme/releases/">x86/ARM64 builds</a>
-                        <a class="dropdown-item" href="https://github.com/win-acme/win-acme/releases/">Release notes</a>
-                        <a class="dropdown-item" href="https://github.com/win-acme/win-acme/releases/">Older versions</a>
-                    </div>
-                </li>
-            </ul>
+            <div class="container">
+                <ul class="navbar-nav">
+                    {% for item in site.data.sitemap.main %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ item.url }}">{{ item.title }}</a>
+                    </li>
+                    {% endfor %}
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Download</a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="https://github.com/win-acme/win-acme/releases/download/v{{ site.releasetag }}/win-acme.v{{ site.releasebuild }}.x64.trimmed.zip">{{ site.releasename }} <strong>(recommended)</strong></a>
+                            <a class="dropdown-item" href="https://github.com/win-acme/win-acme/releases/download/v{{ site.releasetag }}/win-acme.v{{ site.releasebuild }}.x64.pluggable.zip">{{ site.releasename }} (larger download, plugin support)</a>
+                            <a class="dropdown-item" href="https://github.com/win-acme/win-acme/releases/">x86/ARM64 builds</a>
+                            <a class="dropdown-item" href="https://github.com/win-acme/win-acme/releases/">Release notes</a>
+                            <a class="dropdown-item" href="https://github.com/win-acme/win-acme/releases/">Older versions</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
         </div>
     </nav>
 
