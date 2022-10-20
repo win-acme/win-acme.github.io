@@ -16,7 +16,8 @@ following replacements are made by win-acme:
 | `{RecordName}` | full name of the TXT record that is being expected, e.g. `_acme-challenge.sub.example.com`	|
 | `{ZoneName}`   | registerable domain, e.g. `example.com`														|
 | `{NodeName}`   | registerable domain, e.g. `_acme-challenge.sub`												|
-| `{Token}`      | content of the TXT record, e.g. `DGyRejmCefe7v4NfDGDKfA`										|                                 |
+| `{Token}`      | content of the TXT record, e.g. `DGyRejmCefe7v4NfDGDKfA`										|     
+| `{vault://json/mysecret}`        |  Secret from the [vault](https://www.win-acme.com/manual/advanced-use/secret-management)|
 
 The order and format of arguments may be customized by providing a diffent argument string. 
 For example if your script needs arguments like:
