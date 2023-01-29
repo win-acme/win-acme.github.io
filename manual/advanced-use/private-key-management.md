@@ -18,8 +18,7 @@ the default [CertificateStore](/reference/plugins/store/certificatestore)
 plugin you can set `PrivateKeyExportable` to `true` in 
 [settings.json](/reference/settings) to enable these certificates to be exported. 
 
-
-## Migration / disaster recovery
+## Migration/disaster recovery
 The `PrivateKeyExportable` setting only works for future certificates, 
 so if you're in a hurry you can force the renewals using `--renew --force` 
 or from the interactive menu to get new certificates with exportable keys.
@@ -34,3 +33,9 @@ subsequently find the passwords in the corresponding `.renewal.json` files.
 ## Reuse private keys
 If you don't want your private key to change, you can use the option 
 `--reuse-privatekey` when setting up the renewal.
+
+## Private key cache
+By default win-acme retains a copy of the private key in its certificate cache.
+These files are both encrypted and protected by access control lists in the 
+file system. If you disable this in [settings.json](/reference/settings) by
+setting `Cache.ReuseDays` to `0`.

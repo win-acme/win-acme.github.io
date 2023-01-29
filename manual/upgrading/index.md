@@ -7,6 +7,9 @@ When evolving win-acme, we strive for backwards compatibility and in-place upgra
 deleting everything from the program directory and extracting the new files. This can even be automated by 
 tools like [Scoop](https://github.com/lukesampson/scoop).
 
+Also win-acme is available as a [dotnet tool](https://learn.microsoft.com/en-us/dotnet/core/tools/global-tools) 
+on [NuGet.org](https://www.nuget.org/packages/win-acme).
+
 There are some cases when you might want to be a little more careful.
 
 - When you made changes to the script(s) included with the distributed .zip-file, you will probably want to 
@@ -28,4 +31,5 @@ to version 1.9.5 or higher.
 - [v1.9.5](/manual/upgrading/to-v1.9.5)
 - [v1.9.9](/manual/upgrading/to-v1.9.9)
 - [v2.0.0](/manual/upgrading/to-v2.0.0)
-- [v2.1.0](/manual/upgrading/to-v2.0.0)
+- [v2.1.0](/manual/upgrading/to-v2.1.0)
+- [v2.2.0](/manual/upgrading/to-v2.2.0)

@@ -2,8 +2,11 @@
 sidebar: manual
 ---
 
-# Migration
-To migrate to another machine, you may follow these steps.
+# Migrating without downtime
+To migrate to another machine without downtime, you may follow these steps.
+If you're willing to incur some downtime none of this is required, you can
+simply install win-acme on the new machine and re-request all certificates
+after the DNS has been switched over.
 
 ## Pre-migration checklist
 - [Decrypt](/manual/advanced-use/encryption) the configuration files. 

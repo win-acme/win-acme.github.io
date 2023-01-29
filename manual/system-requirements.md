@@ -4,7 +4,7 @@ sidebar: manual
 
 # System requirements
 Officially Microsoft only supports Windows Server 2012 R2 SP1 and higher
-for .NET6, which this program builds on. The program has been known to work 
+for .NET7, which this program builds on. The program has been known to work 
 on Windows Server 2012 as well, but no guarantees can be given. 
 
 Those stuck on Windows 2008 (sorry!) can try release [2.1.20](https://github.com/win-acme/win-acme/releases/tag/v2.1.20]), 

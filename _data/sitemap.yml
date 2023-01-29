@@ -36,7 +36,8 @@ manual:
           url: /manual/advanced-use/examples/apache
         - title: Remote Desktop Services
           url: /manual/advanced-use/examples/rds
-
+    - title: Global validation
+      url: /manual/advanced-use/global-validation
     - title: Load balancing
       url: /manual/advanced-use/load-balancing
     - title: Custom logging
@@ -64,6 +65,8 @@ manual:
       url: /manual/upgrading/to-v2.0.11
     - title: to v2.1.0
       url: /manual/upgrading/to-v2.1.0
+    - title: to v2.2.0
+      url: /manual/upgrading/to-v2.2.0
 reference:
 - title: Command line arguments
   url: /reference/cli
@@ -115,6 +118,8 @@ reference:
               url: /reference/plugins/validation/dns/cloudflare
             - title: DigitalOcean
               url: /reference/plugins/validation/dns/digitalocean
+            - title: DNS Made Easy
+              url: /reference/plugins/validation/dns/dnsmadeeasy
             - title: Domainname.shop
               url: /reference/plugins/validation/dns/domene
             - title: Dreamhost
@@ -174,6 +179,8 @@ reference:
           url: /reference/plugins/store/pemfiles
         - title: .pfx file
           url: /reference/plugins/store/pfxfile
+        - title: User Store
+          url: /reference/plugins/store/userstore
 
     - title: Installation
       url: /reference/plugins/installation/

@@ -49,9 +49,12 @@ applicable when `--bar` is set to `baz` or `qux`.
      change certificate properties and renew at the same time.
 
    --force
-     Force renewal when used together with --renew. Otherwise
-     bypasses the certificate cache on new certificate
-     requests.
+     [--renew] Always execute the renewal, disregarding the 
+     validity of the current certificates and the prefered schedule.
+
+   --nocache
+     Bypass the cache on certificate requests. Applies to both 
+     new requests and renewals.
 
    --cancel
      Cancel renewal specified by the --friendlyname or --id
@@ -487,6 +490,16 @@ applicable when `--bar` is set to `baz` or `qux`.
    --digitaloceanapitoken
      The API token to authenticate against the DigitalOcean
      API.
+
+```
+## DNS Made Easy
+``` [--validation dnsmadeeasy] ```
+```
+   --apikey
+     DnsMadeEasy API key.
+
+   --apisecret
+     DnsMadeEasy API secret.
 
 ```
 ## Domeneshop

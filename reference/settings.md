@@ -173,12 +173,23 @@ version for this many days, to prevent users from running into
 Set this to a high value if you regularly re-request the same certificates, 
 e.g. for a Continuous Deployment scenario.
 
+Setting this to `0` will not entirely disabled the cache (the program also
+needs the files for different reasons), but it will prevent the files from being
+used for renewals and will also ensure that no private key material is stored in 
+the cache, unless specifically requested by parameters like `--reuse-privatekey`.
+
 ### `DeleteStaleFiles`
 Default: `false`
 
-Automatically delete files older than 120 days from the `CertificatePath` 
-folder. Running with default settings, these should only be long-expired 
-certificates, generated for abandoned renewals. However we do advise caution.
+Automatically delete files older than `{DeleteStaleFileDays}` days from 
+the `{CertificatePath}` folder. Running with default settings, these should 
+only be long-expired certificates, generated for abandoned renewals. 
+
+### `DeleteStaleFileDays`
+Default: `120`
+
+This value should be increased if you are working with long-lived 
+certificates.
 
 ## Scheduled task
 
