@@ -428,8 +428,8 @@ applicable when `--bar` is set to `baz` or `qux`.
 
    --dnsscriptparallelism
      Configure parallelism mode. 0 is fully serial (default), 1
-     allows multiple records to be created simulatenously, 2
-     allows multiple records to be validated simulateously and
+     allows multiple records to be created simultaneously, 2
+     allows multiple records to be validated simultaneously and
      3 is a combination of both forms of parallelism.
 
 ```
