@@ -340,6 +340,13 @@ Uses Microsoft Data Protection API to encrypt sensitive parts of
 the configuration, e.g. passwords. This may be disabled to share 
 the configuration across a cluster of machines.
 
+### `FriendlyNameDateTimeStamp`
+Default: `true`
+
+Add the issue date and time to the friendly name of requested certificates. 
+If you require full control over the final certificate friendly name this 
+feature should be disabled.
+
 ## Script
 
 ### `Timeout`

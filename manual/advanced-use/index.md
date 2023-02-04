@@ -57,6 +57,11 @@ By providing the right [command line arguments](/reference/cli) at start up you 
 everything that is possible in interactive mode (and more) without having to jump through the menu's.
 This is great way to make win-acme part of a larger automation workflow.
 
+An easy way to get started with unattended operation is to set up some certificates manually first and then 
+use the `L` option in the renewal manager to see the equivalent command line arguments. Note that some 
+advanced scenarios are not possible through the command line (e.g. multiple installation scripts), so if you
+need to automate those there's no alternative but to manipulate the `.json` files themselves.
+
 ### Examples
 The `--source` switch, used to select a [source plugin](/reference/plugins/source/), 
 triggers the unattended creation of new certificate.

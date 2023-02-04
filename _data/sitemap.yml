@@ -49,7 +49,7 @@ manual:
     - title: Secrets
       url: /manual/advanced-use/secret-management
 
-- title: Migration
+- title: Moving servers
   url: /manual/migration
 
 - title: Upgrading
