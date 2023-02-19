@@ -126,6 +126,8 @@ reference:
               url: /reference/plugins/validation/dns/dreamhost
             - title: GoDaddy
               url: /reference/plugins/validation/dns/godaddy
+            - title: Linode (Akamai)
+              url: /reference/plugins/validation/dns/linode
             - title: LuaDNS
               url: /reference/plugins/validation/dns/lua
             - title: Manual
