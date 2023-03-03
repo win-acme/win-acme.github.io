@@ -29,12 +29,18 @@ Create or update bindings in IIS, according to the following logic:
     are available.
   - In some cases the plugin will not be able to (safely) add a new binding on older versions of IIS, e.g. due to
     lack of support for SNI and/or wildcard bindings. In that case the user will have to create them manually. 
-	Note that renewals will still be automatic after this initial manual setup.
+	Note that renewals will be automatic after this initial manual setup.
 
 ### Ftp sites
 - Any existing FTP sites linked to the previous certificate are updated to use the new certificate.
 - If the Default FTP settings refer to the previous certificate, the defaults is upated to the new certificate.
 - The target FTP site will be updated to use the new certificate. If no target is specified, the source site is considered to be the target.
+
+### Installing to multiple sites
+Due to the logic described above, it's never required to configure the IIS 
+installation step more than once to ensure succesful renewal of all bindings, regardless
+of how many different sites you have. However, if you have a complicated scenario,
+you may need to manually tune the bindings to your wishes after initial setup. 
 
 ## Unattended 
 `--installation iis [--installationsiteid x] [--sslport x] [--sslipaddress x]`
