@@ -313,15 +313,6 @@ Default: `"secp384r1"`
 
 The curve to use for EC certificates.
 
-### `PrivateKeyExportable`
-Default: `false`
-
-If set to `true`, certificates stored in the Windows Certificate Store
-will be marked as exportable, allowing you to transfer them to other 
-computers. Note that this setting doesn't apply retroactively but only
-to certificates issued from the moment that setting has changed.
-For tips about migration please refer to [this page](/manual/migration).
-
 ### `EncryptConfig`
 Default: `true`
 
@@ -449,6 +440,25 @@ The certificate store to save the certificates in. If left empty,
 certificates will be installed either in the `WebHosting` store, or 
 if that is not available, the `My` store (better known in the
 Microsoft Management Console as as `Personal`).
+
+### `CertificateStore.PrivateKeyExportable`
+Default: `false`
+
+If set to `true`, certificates stored in the Windows Certificate Store
+will be marked as exportable, allowing you to transfer them to other 
+computers. Note that this setting doesn't apply retroactively but only
+to certificates issued from the moment that setting has changed.
+For tips about migration please refer to [this page](/manual/migration).
+
+### `CertificateStore.UseNextGenerationCryptoApi`
+Default: `false`
+
+If set to `true`, the program will use the [Cryptography API: Next Generation](https://learn.microsoft.com/en-us/windows/win32/seccng/about-cng) (CNG)
+to handle private keys, instead of the legacy CryptoAPI. Note that enabling 
+this option may make the certificates unusable or behave differently in subtle 
+ways for software that only supports or assumes the key to exist in CryptoAPI. 
+For example it will not work for older versions of Microsoft Exchange and it 
+won't be exportable from IIS, even if the `PrivateKeyExportable` setting is true.
 
 ### `CentralSsl.DefaultPath`
 Default: `null`
