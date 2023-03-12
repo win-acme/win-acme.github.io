@@ -21,12 +21,7 @@ secrets. The secret manager can be accessed from the main menu by going to
 `More options...` > `Manage secrets`. There you will be presented with a list of currently 
 known secrets (if any) to update/delete them, and an option to add a new one. Each secret 
 has a unique URI like `vault://json/mysecret` which you can use in various places like 
-configuration files or command line arguments.
-
-## External plugins
-
-Unfortunately, currently the secret manager is only supported for built-in features. 
-Support for external plugins will be added in the next release.
+configuration files, command line arguments or script installation parameters.
 
 ## Multiple backends
 

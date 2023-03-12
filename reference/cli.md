@@ -49,9 +49,12 @@ applicable when `--bar` is set to `baz` or `qux`.
      change certificate properties and renew at the same time.
 
    --force
-     Force renewal when used together with --renew. Otherwise
-     bypasses the certificate cache on new certificate
-     requests.
+     [--renew] Always execute the renewal, disregarding the 
+     validity of the current certificates and the prefered schedule.
+
+   --nocache
+     Bypass the cache on certificate requests. Applies to both 
+     new requests and renewals.
 
    --cancel
      Cancel renewal specified by the --friendlyname or --id
@@ -425,8 +428,8 @@ applicable when `--bar` is set to `baz` or `qux`.
 
    --dnsscriptparallelism
      Configure parallelism mode. 0 is fully serial (default), 1
-     allows multiple records to be created simulatenously, 2
-     allows multiple records to be validated simulateously and
+     allows multiple records to be created simultaneously, 2
+     allows multiple records to be validated simultaneously and
      3 is a combination of both forms of parallelism.
 
 ```
@@ -487,6 +490,16 @@ applicable when `--bar` is set to `baz` or `qux`.
    --digitaloceanapitoken
      The API token to authenticate against the DigitalOcean
      API.
+
+```
+## DNS Made Easy
+``` [--validation dnsmadeeasy] ```
+```
+   --apikey
+     DnsMadeEasy API key.
+
+   --apisecret
+     DnsMadeEasy API secret.
 
 ```
 ## Domeneshop

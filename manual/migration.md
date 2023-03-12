@@ -2,8 +2,21 @@
 sidebar: manual
 ---
 
-# Migration
-To migrate to another machine, you may follow these steps.
+# With downtime
+If you're willing to incur some downtime none of the following steps are required,
+you can simply install win-acme on the new machine and re-request all certificates
+after the DNS has been switched over. 
+
+In the renewal manager you can use the `L` option to generate the command line 
+options that may be helpful to recreate the certificates on the new machine. Note
+that depending on your use of win-acme this may not be foolproof. Some things which
+are possible to do through the GUI and/or by manipulating `.json` files behind the
+scenes are impossible to translate to command line arguments. Also you may be missing 
+certain dependancies on the new machine, such as vault secrets, acme-dns 
+registrations, etc.
+
+# Without downtime
+To migrate to another machine without downtime, you may follow these steps.
 
 ## Pre-migration checklist
 - [Decrypt](/manual/advanced-use/encryption) the configuration files. 
