@@ -1,9 +1,9 @@
 theme: jekyll-theme-merlot
 show_downloads: true
 google_analytics: UA-134924634-2
-releasename: 2.2.2
-releasetag: 2.2.2.1447
-releasebuild: 2.2.2.1447
+releasename: 2.2.2.1
+releasetag: 2.2.2.1449
+releasebuild: 2.2.2.1449
 exclude:
  - "bin"
  - "obj"
