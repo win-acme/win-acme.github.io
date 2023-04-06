@@ -214,6 +214,13 @@ processed between 45 and 55 days after issuing.
 If you use an order plugin to split your renewal into multiple orders, orders 
 may run on different days.
 
+### `RenewalDisableServerSchedule`
+Default: `false`
+
+By default, servers implementing ARI may suggest that renewals should happen 
+earlier than the regularly scheduled moment. When set to `true`, ARI suggestions
+will be ignored.
+
 ### `RenewalMinimumValidDays `
 Default: `null` (which is interpreted as 7 days)
 

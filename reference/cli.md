@@ -154,6 +154,12 @@ applicable when `--bar` is set to `baz` or `qux`.
      Algorithm to use for external account binding. Valid
      values are HS256 (default), HS384, and HS512.
 
+   --account
+     Optionally provide a name for the account. Using different
+     names for different renewals enables you to managed multiple
+     accounts for a single ACME endpoint. Unless you have a  
+     specific need to do this, we recommend to not use this.
+
 ```
 # CSR
 

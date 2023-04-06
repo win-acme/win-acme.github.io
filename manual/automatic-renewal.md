@@ -9,8 +9,9 @@ A single scheduled task is responsible to renew *all* certificates created by th
 but will only do so when it's actually neccessary. The task is created by the program itself 
 after successfully creating the first certificate. The task runs every day and checks two 
 conditions to determine if it should renew:
-- If the certificate is getting too old. This is based on the known history stored in the file.
+- If the certificate is getting too old. This is based on the known history and validity dates.
 - If the source (list of domains) has changed, e.g. an extra binding has been added to an IIS site.
+- If the server tells us that a renewal should happen, e.g. due to a security incident.
 
 ### Customization
 The default renewal period of 55 days can be changed in [settings.json](/reference/settings).
