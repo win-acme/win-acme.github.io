@@ -136,6 +136,8 @@ reference:
               url: /reference/plugins/validation/dns/manual
             - title: NS1
               url: /reference/plugins/validation/dns/ns1
+            - title: RFC2136
+              url: /reference/plugins/validation/dns/rfc2136
             - title: Route53 (Amazon)
               url: /reference/plugins/validation/dns/route53
             - title: Script

@@ -49,12 +49,10 @@ applicable when `--bar` is set to `baz` or `qux`.
      change certificate properties and renew at the same time.
 
    --force
-     [--renew] Always execute the renewal, disregarding the 
-     validity of the current certificates and the prefered schedule.
+     Force renewal when used together with --renew.
 
    --nocache
-     Bypass the cache on certificate requests. Applies to both 
-     new requests and renewals.
+     Bypass the certificate cache on new certificate requests.
 
    --cancel
      Cancel renewal specified by the --friendlyname or --id
@@ -141,7 +139,12 @@ applicable when `--bar` is set to `baz` or `qux`.
      Accept the ACME terms of service.
 
    --emailaddress
-     Email address to use by ACME for renewal fail notices.
+     Email address to link to your ACME account.
+
+   --account
+     Name for your ACME account. A seperate registration and
+     signer will be generated for each unique value that you
+     provide.
 
    --eab-key-identifier
      Key identifier to use for external account binding.
@@ -153,12 +156,6 @@ applicable when `--bar` is set to `baz` or `qux`.
    --eab-algorithm
      Algorithm to use for external account binding. Valid
      values are HS256 (default), HS384, and HS512.
-
-   --account
-     Optionally provide a name for the account. Using different
-     names for different renewals enables you to managed multiple
-     accounts for a single ACME endpoint. Unless you have a  
-     specific need to do this, we recommend to not use this.
 
 ```
 # CSR
@@ -274,17 +271,6 @@ applicable when `--bar` is set to `baz` or `qux`.
 ```
 # Store
 
-## Central Certificate Store plugin
-``` [--store centralssl] ```
-```
-   --centralsslstore
-     Location of the IIS Central Certificate Store.
-
-   --pfxpassword
-     Password to set for .pfx files exported to the IIS Central
-     Certificate Store.
-
-```
 ## Certificate Store plugin
 ``` [--store certificatestore] ``` (default)
 ```
@@ -302,11 +288,26 @@ applicable when `--bar` is set to `baz` or `qux`.
      private key of the certificate.
 
 ```
+## Central Certificate Store plugin
+``` [--store centralssl] ```
+```
+   --centralsslstore
+     Location of the IIS Central Certificate Store.
+
+   --pfxpassword
+     Password to set for .pfx files exported to the IIS Central
+     Certificate Store.
+
+```
 ## PEM files plugin
 ``` [--store pemfiles] ```
 ```
    --pemfilespath
      .pem files are exported to this folder.
+
+   --pemfilesname
+     Prefix to use for the .pem files, defaults to the common
+     name.
 
    --pempassword
      Password to set for the private key .pem file.
@@ -318,8 +319,12 @@ applicable when `--bar` is set to `baz` or `qux`.
    --pfxfilepath
      Path to write the .pfx file to.
 
+   --pfxfilename
+     Prefix to use for the .pfx file, defaults to the common
+     name.
+
    --pfxpassword
-     Password to set for .pfx files exported to the folder.
+     Password to set for .pfx file exported to the folder.
 
 ```
 ## Azure KeyVault
@@ -353,8 +358,25 @@ applicable when `--bar` is set to `baz` or `qux`.
      registrations.
 
 ```
+## User Store plugin
+``` [--store userstore] ```
+```
+   --keepexisting
+     While renewing, do not remove the previous certificate.
+
+```
 # Validation
 
+## Credentials
+``` [--validation ftp|sftp|webdav] ```
+```
+   --username
+     Username for remote server
+
+   --password
+     Password for remote server
+
+```
 ## Common HTTP validation options
 ``` [--validation filesystem|ftp|sftp|webdav] ```
 ```
@@ -364,40 +386,6 @@ applicable when `--bar` is set to `baz` or `qux`.
 
    --manualtargetisiis
      Copy default web.config to the .well-known directory.
-
-```
-## SelfHosting plugin
-``` [--validationmode tls-alpn-01 --validation selfhosting] ``` (default)
-```
-   --validationport
-     Port to use for listening to validation requests. Note
-     that the ACME server will always send requests to port
-     443. This option is only useful in combination with a port
-     forwarding.
-
-```
-## FileSystem plugin
-``` [--validation filesystem] ```
-```
-   --validationsiteid
-     Specify IIS site to use for handling validation requests.
-     This will be used to choose the web root path.
-
-```
-## SelfHosting plugin
-``` [--validation selfhosting] ``` (default)
-```
-   --validationport
-     Port to use for listening to validation requests. Note
-     that the ACME server will always send requests to port 80.
-     This option is only useful in combination with a port
-     forwarding.
-
-   --validationprotocol
-     Protocol to use to handle validation requests. Defaults to
-     http but may be set to https if you have automatic
-     redirects setup in your infrastructure before requests hit
-     the web server.
 
 ```
 ## AcmeDns
@@ -439,14 +427,38 @@ applicable when `--bar` is set to `baz` or `qux`.
      3 is a combination of both forms of parallelism.
 
 ```
-## Credentials
-``` [--validation ftp|sftp|webdav] ```
+## FileSystem plugin
+``` [--validation filesystem] ```
 ```
-   --username
-     Username for remote server
+   --validationsiteid
+     Specify IIS site to use for handling validation requests.
+     This will be used to choose the web root path.
 
-   --password
-     Password for remote server
+```
+## SelfHosting plugin
+``` [--validation selfhosting] ``` (default)
+```
+   --validationport
+     Port to use for listening to validation requests. Note
+     that the ACME server will always send requests to port 80.
+     This option is only useful in combination with a port
+     forwarding.
+
+   --validationprotocol
+     Protocol to use to handle validation requests. Defaults to
+     http but may be set to https if you have automatic
+     redirects setup in your infrastructure before requests hit
+     the web server.
+
+```
+## SelfHosting plugin
+``` [--validationmode tls-alpn-01 --validation selfhosting] ``` (default)
+```
+   --validationport
+     Port to use for listening to validation requests. Note
+     that the ACME server will always send requests to port
+     443. This option is only useful in combination with a port
+     forwarding.
 
 ```
 ## Azure
@@ -498,7 +510,7 @@ applicable when `--bar` is set to `baz` or `qux`.
      API.
 
 ```
-## DNS Made Easy
+## DnsMadeEasy
 ``` [--validation dnsmadeeasy] ```
 ```
    --apikey
@@ -545,6 +557,20 @@ applicable when `--bar` is set to `baz` or `qux`.
      Project ID that is hosting Cloud DNS.
 
 ```
+## Infomaniak
+``` [--validation infomaniak] ```
+```
+   --apitoken
+     Infomaniak API token
+
+```
+## Linode
+``` [--validation linode] ```
+```
+   --apitoken
+     Linode Personal Access Token
+
+```
 ## LuaDns
 ``` [--validation luadns] ```
 ```
@@ -573,6 +599,25 @@ applicable when `--bar` is set to `baz` or `qux`.
      If HTTPS should be used instead of HTTP. Must be true if
      the server has HTTP to HTTPS redirection configured, as
      the redirected request always uses the GET method.
+
+```
+## Rfc2136
+``` [--validation rfc2136] ```
+```
+   --serverhost
+     DNS server host/ip
+
+   --serverport
+     DNS server port
+
+   --tsigkeyname
+     TSIG key name
+
+   --tsigkeysecret
+     TSIG key secret (Base64 encoded)
+
+   --tsigkeyalgorithm
+     TSIG key algorithm
 
 ```
 ## Route53
