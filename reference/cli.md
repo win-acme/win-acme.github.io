@@ -49,11 +49,12 @@ applicable when `--bar` is set to `baz` or `qux`.
      change certificate properties and renew at the same time.
 
    --force
-     Force renewal when used together with --renew.
+     [--renew] Always execute the renewal, disregarding the 
+     validity of the current certificates and the prefered schedule.
 
    --nocache
-     Bypass the certificate cache on new certificate requests.
-
+     Bypass the cache on certificate requests. Applies to both 
+     new requests and renewals.
    --cancel
      Cancel renewal specified by the --friendlyname or --id
      arguments.
