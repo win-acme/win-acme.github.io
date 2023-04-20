@@ -55,6 +55,7 @@ applicable when `--bar` is set to `baz` or `qux`.
    --nocache
      Bypass the cache on certificate requests. Applies to both 
      new requests and renewals.
+
    --cancel
      Cancel renewal specified by the --friendlyname or --id
      arguments.
