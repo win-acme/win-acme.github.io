@@ -12,7 +12,7 @@ specific bindings to create a certificate for. There are several filters availab
 combined with eachother.
 
 ## Site filters
-You can choose to limit the certificate to specific websites by specifying a site identifier, or a comma seperated list 
+You can choose to limit the certificate to specific websites by specifying a site identifier, or a comma separated list 
 of them. The magic value `s` will dynamically include all current and future websites created on the server.
 
 ## Binding filters

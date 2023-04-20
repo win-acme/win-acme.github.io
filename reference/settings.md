@@ -123,7 +123,7 @@ be useful to undo any actions taken by the script configured as the
 `DefaultPreExecutionScript`. Not to be confused with the 
 [script installation](/reference/plugins/installation/script) plugin.
 The difference is that the installation plugin can be configured 
-seperately for each renewal and has access to a lot more context about 
+separately for each renewal and has access to a lot more context about 
 the new and previous certificates. Also when the installation script fails,
 the renewal will be retried later. That is not the case for the pre/post 
 execution scripts. Any errors there are logged but otherwise ignored.
@@ -456,7 +456,7 @@ Default order plugin, `null` currently equivalent to `"rsa"`
 Default: `null`
 
 Default store plugin(s), `null` currently equivalent to `"certificatestore"`. 
-This may be a comma seperated value for multiple default store plugins.
+This may be a comma separated value for multiple default store plugins.
 
 ### `CertificateStore.DefaultStore`
 Default: `null`
@@ -552,7 +552,7 @@ Default: `null`
 
 Default installation plugin(s), `null` currently equivalent to `"none"` for 
 unattended usage and `"iis"` for interactive mode. This may be a comma 
-seperated value for multiple default installation plugins.
+separated value for multiple default installation plugins.
 
 # Secrets
 

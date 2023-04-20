@@ -144,7 +144,7 @@ applicable when `--bar` is set to `baz` or `qux`.
      Email address to link to your ACME account.
 
    --account
-     Name for your ACME account. A seperate registration and
+     Name for your ACME account. A separate registration and
      signer will be generated for each unique value that you
      provide.
 
@@ -256,7 +256,7 @@ applicable when `--bar` is set to `baz` or `qux`.
 
    --host-type
      Specify which types of bindings to consider. May be set to
-     http, ftp or both (comma seperated)
+     http, ftp or both (comma separated)
 
 ```
 ## Manual plugin

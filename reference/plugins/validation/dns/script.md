@@ -55,7 +55,7 @@ to make changes (e.g. in terms of accepted parameter and such) in order to use t
 ## Unattended
 - ##### Create script only
 `-validationmode dns-01 --validation script --dnscreatescript c:\create.ps1 [--dnscreatescriptarguments {args}]`
-- ##### Create and delete scripts seperate
+- ##### Create and delete scripts separate
 `-validationmode dns-01 --validation script --dnscreatescript c:\create.ps1 --dnsdeletescript c:\delete.ps1 [--dnscreatescriptarguments {args}] [--dnsdeletescriptarguments {args}]`
 - ##### Create-delete script (integrated)
 `-validationmode dns-01 --validation script --dnsscript c:\create-and-delete.ps1 [--dnscreatescriptarguments {args}] [--dnsdeletescriptarguments {args}]`

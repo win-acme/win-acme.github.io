@@ -12,7 +12,7 @@ accessible to the application(s) that need them.
 
 ## Multiple
 More than one plugin can run by choosing them in order of execution. In interactive 
-mode you will be asked, for unattended mode you can provide a comma seperated list, 
+mode you will be asked, for unattended mode you can provide a comma separated list, 
 e.g. `--store certificatestore,pemfiles`
 
 ## Default

@@ -9,7 +9,7 @@ there are three of these plugins.
 
 ## Multiple
 More than one plugin can run by choosing them in order of execution. In interactive 
-mode you will be asked, for unattended mode you can provide a comma seperated list, 
+mode you will be asked, for unattended mode you can provide a comma separated list, 
 e.g. `--installation certificatestore,pemfiles`
 
 ## Default (default settings)

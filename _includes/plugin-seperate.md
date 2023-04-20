@@ -1,4 +1,4 @@
-﻿## Seperate download
+﻿## Separate download
 
 This plugin is offered as a separate download, which can be downloaded from the 
 [releases](https://github.com/win-acme/win-acme/releases/) page on GitHub has to 
