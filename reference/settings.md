@@ -455,7 +455,7 @@ The number of bits to use for RSA private keys. Minimum is 2048.
 ### `Rsa.SignatureAlgorithm`
 Default: `"SHA512withRSA"`
 
-Algorithm to use to sign CSR with RSA private keys
+Algorithm to use to sign CSR with RSA private keys. Full list of possible options available [here](https://github.com/bcgit/bc-csharp/blob/master/crypto/src/cms/CMSSignedGenerator.cs). Note that not all servers will support all types of signatures.
 
 ### `Ec.CurveName`
 Default: `"secp384r1"`
@@ -465,7 +465,7 @@ The curve to use for EC private keys.
 ### `Ec.SignatureAlgorithm`
 Default: `"SHA512withECDSA"`
 
-Algorithm to use to sign CSR with EC private key.
+Algorithm to use to sign CSR with EC private key. Full list of possible options available [here](https://github.com/bcgit/bc-csharp/blob/master/crypto/src/cms/CMSSignedGenerator.cs). Note that not all servers will support all types of signatures.
 
 ## Store
 
