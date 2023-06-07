@@ -321,16 +321,6 @@ This value replaces the Windows machine name reported in emails.
 
 ## Security
 
-### `RSAKeyBits`
-Default: `3072`
-
-The key size to sign the certificate with. Minimum is 2048.
-
-### `ECCurve`
-Default: `"secp384r1"`
-
-The curve to use for EC certificates.
-
 ### `EncryptConfig`
 Default: `true`
 
@@ -426,7 +416,7 @@ but the same trick can be applied to any of the
 to disable the feature.
 
 ### `DnsServers`
-Default: `[ "8.8.8.8", "1.1.1.1", "8.8.4.4" ]`
+Default: `[ "[System]" ]`
 
 A list of servers to query during DNS prevalidation checks to verify whether 
 or not the validation record has been properly created and is visible for the 
@@ -443,12 +433,39 @@ Default: `null`
 
 Default order plugin, `null` currently equivalent to `"single"`
 
+### `DefaultValidDays`
+Default: `null` (server default)
+
+Number of days requested certificates should remain valid. Note that 
+not all servers support this property. Specifically Let's Encrypt throws
+an error when using this at the time of writing.
+
 ## Csr 
 
 ### `DefaultCsr`
 Default: `null`
 
 Default order plugin, `null` currently equivalent to `"rsa"`
+
+### `Rsa.KeyBits`
+Default: `3072`
+
+The number of bits to use for RSA private keys. Minimum is 2048.
+
+### `Rsa.SignatureAlgorithm`
+Default: `"SHA512withRSA"`
+
+Algorithm to use to sign CSR with RSA private keys
+
+### `Ec.CurveName`
+Default: `"secp384r1"`
+
+The curve to use for EC private keys.
+
+### `Ec.SignatureAlgorithm`
+Default: `"SHA512withECDSA"`
+
+Algorithm to use to sign CSR with EC private key.
 
 ## Store
 

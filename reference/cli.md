@@ -56,6 +56,9 @@ applicable when `--bar` is set to `baz` or `qux`.
      Bypass the cache on certificate requests. Applies to both 
      new requests and renewals.
 
+   --register
+     Create an ACME service account.
+
    --cancel
      Cancel renewal specified by the --friendlyname or --id
      arguments.
@@ -473,7 +476,7 @@ applicable when `--bar` is set to `baz` or `qux`.
      The name of the resource group within Microsoft Azure DNS.
 
    --azurehostedzone
-     Hosted zone (blank to find best match)
+     Hosted zone name (blank to automatically find best match)
 
    --azureenvironment
      This can be used to specify a specific Azure endpoint.
