@@ -84,6 +84,14 @@ Use [POST-as-GET] mode as defined in
 [RFC8555](https://tools.ietf.org/html/rfc8555#section-6.3), 
 as required by Let's Encrypt since November 2020.
 
+### `ValidateServerCertificate`
+Default: `true`
+
+Set this to `false` to disable certificate validation of the 
+ACME endpoint. Note that this is a security risk, it's only
+intended to connect to internal/private ACME servers with 
+self-signed certificates.
+
 ### `RetryCount`
 Default: `15`
 
@@ -414,6 +422,15 @@ to another (sub)domain under your control that doesn't have these limitations.
 but the same trick can be applied to any of the 
 [DNS plugins](/reference/plugins/validation/dns/). Set this value to `false` 
 to disable the feature.
+
+### `Ftp.UseGnuTls`
+Default: `false`
+
+If you experience connection issues with Unix FTPS servers, using the GnuTLS library
+instead of Microsofts native TLS might solve the problem. [This page](https://github.com/robinrodricks/FluentFTP/wiki/FTPS-Connection-using-GnuTLS) 
+by the FluentFTP project explains the reasons behind and limitations of this method.
+Note that it's not enough to merely change this setting, check the documentation of the
+[FTP plugin](/reference/plugins/validation/http/ftps) for more details.
 
 ### `DnsServers`
 Default: `[ "[System]" ]`
