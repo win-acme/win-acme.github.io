@@ -3,14 +3,19 @@ sidebar: manual
 ---
 
 # System requirements
-Officially Microsoft only supports Windows Server 2012 R2 SP1 and higher
-for .NET7, which this program builds on. The program has been known to work 
-on Windows Server 2012 as well, but no guarantees can be given. 
+Officially, Microsoft only supports Windows Server 2016 and higher
+for .NET7, which this program builds and depends on. If you're stuck 
+on an older version of Windows (sorry), consider running the latest 
+version of win-acme on a different machine and transfering the certificates 
+over to the older machine using an installation script.
 
-Those stuck on Windows 2008 (sorry!) can try release [2.1.20](https://github.com/win-acme/win-acme/releases/tag/v2.1.20]), 
-which was the last one built on .NET5, or [2.0.12.1](https://github.com/win-acme/win-acme/releases/tag/v2.0.11.705),
-which was the last one built on .NET4. Neither of those releases are going
-to receive support anymore though.
+If you absolutely must run win-acme on the older machine, you can use an older
+release of the software and accept all known bugs and limitations, because
+they are not supported anymore. 
+
+.NET6 (should work on Windows 2012): version [2.1.23](https://github.com/win-acme/win-acme/releases/tag/v2.1.23.1315])
+.NET5 (should work on Windows 2008): version [2.1.20](https://github.com/win-acme/win-acme/releases/tag/v2.1.20])
+.NET4 (backup if above fails to run): version [2.0.12.1](https://github.com/win-acme/win-acme/releases/tag/v2.0.11.705)
 
 # Common startup problems
 - You may need to install [Microsoft Visual C++ 2015 Redistributable Update 3](https://www.microsoft.com/download/details.aspx?id=52685)
