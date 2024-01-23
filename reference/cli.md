@@ -10,6 +10,9 @@ Here are all the command line arguments the program accepts.
   before proceeding with unattended use.
 - Arguments documented as such: `--foo [--bar baz|qux]` mean that `--foo` is only 
 applicable when `--bar` is set to `baz` or `qux`.
+- Arguments that start with a `-` should be **double** escaped to be properly parsed. 
+For example if your literal value for `--key` needs to be `-foo` then typing `--key "-foo"` 
+will fail. Instead you need to type `--key "\"-foo\""`.
 
 ## Main
 ```
@@ -287,10 +290,16 @@ applicable when `--bar` is set to `baz` or `qux`.
    --keepexisting
      While renewing, do not remove the previous certificate.
 
+   --acl-read
+     List of additional principals (besides the owners of the
+     store) that should get read permission on the private key 
+     of the certificate.
+
    --acl-fullcontrol
      List of additional principals (besides the owners of the
-     store) that should get full control permissions on the
-     private key of the certificate.
+     store) that should get full control permission on the private 
+     key of the certificate.
+
 
 ```
 ## Central Certificate Store plugin

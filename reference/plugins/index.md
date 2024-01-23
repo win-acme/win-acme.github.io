@@ -20,6 +20,13 @@ one(s) you want. Check the [command line reference](/reference/cli) to see how.
 - One or more [store plugins](/reference/plugins/store/) place the certificate(s) in a specific location and format.
 - One or more [installation plugins](/reference/plugins/installation/) make changes to your application(s) configuration.
 
+There are two other types of plugins that may be interesting to developers of custom solutions:
+
+- A notification target (`INotificationTarget`) can be used to send success or error messages to your favorite channel, instead of (or in addition to) the built in emails.
+- A secret store (`ISecretService`) can be used to get and set secrets like passwords from your favorite management tool, instead of (or in addition to) the built in encrypted JSON file.
+
+Currently there are no alternative implementations for these last two interfaces available as part of this project, but we always welcome contributions.
+
 ## Pluggable vs. Trimmed releases
 
 A lot of plugins are built-in, but some plugins are distributed as optional extra downloads. 

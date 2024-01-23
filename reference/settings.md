@@ -387,6 +387,13 @@ Default: `true`
 Disable multithreading features for validation. Inceases runtime but may
 help to fix bugs caused by race conditions.
 
+### `ParallelBatchSize `
+Default: `100`
+
+Maximum number of validations to run simultaneously. We recommend limiting
+this to about 20 to prevent issues like overrunning the maximum size of 
+a DNS response.
+
 ### `CleanupFolders`
 Default: `true`
 
