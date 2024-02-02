@@ -58,6 +58,13 @@ found [here](https://docs.microsoft.com/en-us/dotnet/api/system.text.encoding?vi
 For certain languages `"unicode"` might give better results displaying the characters,
 but note that this reduces compatibility with other programs processing the output.
 
+### `Color.Background`
+Default: `null`
+
+When set to `"black"`, the background color for the UI will be forced to black using
+VT100 escape sequences. This only works in modern terminals, i.e. nothing before
+Windows 2016 / Windows 10.
+
 ## ACME
 
 ### `DefaultBaseUri`
