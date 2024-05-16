@@ -3,10 +3,10 @@ sidebar: reference
 ---
 
 # TransIP 
-Create the record at [TransIP](https://www.transip.nl/). Note that this provider is not very fast updating its records after 
-their API has accepted the changes, so it's highly recommended to roughly double either 
-`PreValidateDnsRetryCount` and/or `PreValidateDnsRetryInterval` in `settings.json` when using 
-DNS validation through them.
+Create the record at [TransIP](https://www.transip.nl/). Note that this provider is not very 
+fast updating its records after their API has accepted the changes, so it's highly recommended 
+to roughly double either `PreValidateDnsRetryCount` and/or `PreValidateDnsRetryInterval` in 
+`settings.json` when using DNS validation through them.
 
 {% include plugin-seperate.md %}
 

@@ -120,6 +120,8 @@ reference:
               url: /reference/plugins/validation/dns/cloudflare
             - title: DigitalOcean
               url: /reference/plugins/validation/dns/digitalocean
+            - title: DNSEXIT
+              url: /reference/plugins/validation/dns/dnsexit
             - title: DNS Made Easy
               url: /reference/plugins/validation/dns/dnsmadeeasy
             - title: Domainname.shop
@@ -128,6 +130,8 @@ reference:
               url: /reference/plugins/validation/dns/dreamhost
             - title: GoDaddy
               url: /reference/plugins/validation/dns/godaddy
+            - title: Hetzner
+              url: /reference/plugins/validation/dns/hetzner
             - title: InfoManiak
               url: /reference/plugins/validation/dns/infomaniak
             - title: Linode (Akamai)
