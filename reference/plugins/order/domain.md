@@ -2,7 +2,7 @@
 sidebar: reference
 ---
 
-# Host
+# Domain
 Generates an order/certificate for each registerable domain found in the source. 
 For example when there are five hosts in the source:
 

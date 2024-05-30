@@ -5,7 +5,7 @@ sidebar: reference
 # Installation plugins
 Installation plugins are responsible for making the necessary changes to your 
 application(s) after successfully creating or renewing a certificate. Currently 
-there are three of these plugins.
+there are two of these plugins.
 
 ## Multiple
 More than one plugin can run by choosing them in order of execution. In interactive 
