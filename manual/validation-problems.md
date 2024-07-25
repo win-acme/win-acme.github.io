@@ -47,7 +47,7 @@ Let's Encrypt does not support more than 100 domain names per certificate.
 
 ### Non-public domains
 Let's Encrypt can only be used to issue certificates for domains living on the
-public internet. Interal domains or Active Directory host names are therefor not
+public internet. Internal domains or Active Directory host names are therefore not
 possible to use.
 
 ## HTTP validation issues
@@ -74,7 +74,7 @@ Your CMS might intercept the request and redirect the user to an (error) page. T
 is to configure your CMS to allow unlimited access to the `/.well-known/acme-challenge/` 
 path.
 
-##### Problems with httpHanders
+##### Problems with httpHandlers
 IIS might not be configured to serve static extensionless files. 
 
 1. In IIS manager go to the `/.well-known/acme-challenge/` folder of the site (you may have to 
