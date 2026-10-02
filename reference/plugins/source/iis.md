@@ -42,5 +42,5 @@ problem. [regex101.com](https://regex101.com/) is a nice tool to help test your 
 `--source iis --siteid s [--commonname common.example.com] [--excludebindings exclude.example.com]`
 - ##### Binding pattern
 `--source iis --host-pattern *.example.??? [--siteid 1,2,3] [--commonname common.example.com] [--excludebindings exclude.example.com]`
-- ##### Binging regex
+- ##### Binding regex
 `--source iis --host-regex [a-z]{3}\.example(\.com|\.net) [--siteid 1,2,3] [--commonname common.example.com] [--excludebindings exclude.example.com]`
